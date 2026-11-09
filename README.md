@@ -8,10 +8,6 @@ in the reference model's posterior-prior latent divergence. We study how this
 adaptation changes game performance, observed behavior breadth, and seeded
 operator exposure in Craftax Classic.
 
-The method was previously called **FATE**. Historical code names, environment
-variables, and result identifiers such as `FaultAdaptFATE` are preserved for
-traceability; their paper-facing method name is TEA.
-
 ## Start Here
 
 - [Protocol and execution examples](docs/tea_protocol.md)

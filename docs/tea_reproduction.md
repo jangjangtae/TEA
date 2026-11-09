@@ -118,6 +118,11 @@ the draw. See [operator definitions](tea_operators.md).
 
 ## Execute an Archived YAML
 
+Some archived configuration/result identifiers and environment variables
+contain `FATE`, for example `FaultAdaptFATE` and `FATE_INITIAL_REPLAY_MANIFEST`.
+They refer to TEA in this release. Keep these literal identifiers when running
+commands or matching CSV rows; they do not denote a separate method.
+
 `dreamerv3.main --configs` accepts named presets, not YAML filenames. The
 launcher below translates a full archived YAML into the same CLI flags,
 validates types, and checks that the settings round-trip through the schema:
