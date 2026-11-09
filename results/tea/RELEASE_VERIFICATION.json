@@ -9,6 +9,11 @@
   "figure_interval_fields_verified": 54,
   "figures_regenerated": 5,
   "documentation_links_verified": 21,
+  "configuration_launcher_tests": 6,
+  "public_documentation_tests": 5,
+  "archived_yaml_configurations_round_tripped": 86,
+  "additional_wuji_launchers_verified": 2,
+  "total_focused_tests": 60,
   "new_training_runs": 0,
   "new_policy_evaluation_rollouts": 0
 }

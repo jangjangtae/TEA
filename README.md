@@ -15,6 +15,8 @@ traceability; their paper-facing method name is TEA.
 ## Start Here
 
 - [Protocol and execution examples](docs/tea_protocol.md)
+- [Step-by-step reproduction and troubleshooting](docs/tea_reproduction.md)
+- [WUJI DQN and A2C setup and execution](docs/wuji_craftax_port.md)
 - [Completed results and evaluation scope](docs/tea_results.md)
 - [Fault operators and action IDs](docs/tea_operators.md)
 - [Saved per-run configurations](configs/tea/config_index.csv)
@@ -131,5 +133,13 @@ Model weights, replay chunks, raw transition JSONL, virtual environments, and
 laboratory-specific experiment directories are not included. Archived
 configuration paths beginning with `artifacts/` identify original local
 artifacts; replace them with your own paths when running an experiment.
+
+The [reproduction guide](docs/tea_reproduction.md) separates analysis of the
+released measurements from new training. It explains checkpoint selection,
+archived-YAML commands, reward controls, multi-seed evaluation, optional replay
+restoration, output checks, and the limits of the released artifacts. The
+configuration launcher prints a validated command by default; training starts
+only when `--execute` is supplied. WUJI launchers and their upstream checkout
+requirements are documented separately.
 
 This is a research extension and is not an official DreamerV3 release.

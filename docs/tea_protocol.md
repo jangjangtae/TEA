@@ -5,6 +5,12 @@ a frozen clean-reference model. Adaptation uses Clean or `benchmark_train`.
 Holdout and Sparse are fixed-policy evaluations with no updates or intrinsic
 reward added to the delivered task return.
 
+For a first installation, follow the [reproduction guide](tea_reproduction.md)
+first. It includes virtual environments, additional Craftax dependencies,
+checkpoint-directory selection, saved-YAML execution, smoke commands, replay
+manifest preparation, resuming, and troubleshooting. Optional external
+comparators have a [separate WUJI guide](wuji_craftax_port.md).
+
 ## Runtime Setup
 
 The archived runs used Python 3.11, JAX with CUDA support, and Craftax 1.6.1.
@@ -12,7 +18,8 @@ The existing `requirements.txt` retains the Dreamer runtime dependencies.
 Install Craftax separately to preserve the selected JAX environment:
 
 ```bash
-python -m pip install -r requirements.txt
+python -m pip install -c constraints/tea-runtime.txt -r requirements.txt \
+  'flax==0.8.5' 'ruamel.yaml==0.19.1' pygame imageio seaborn
 python -m pip install --target .deps/craftax_pkgs --no-deps \
   craftax==1.6.1 gymnax==0.0.9 gymnasium==1.3.0
 export PYTHONPATH="$PWD:$PWD/.deps/craftax_pkgs${PYTHONPATH:+:$PYTHONPATH}"

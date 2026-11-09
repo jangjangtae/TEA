@@ -18,6 +18,20 @@
   },
   "files": [
     {
+      "target": "tools/run_wuji_craftax.py",
+      "origin": "tools/run_wuji_craftax.py from the research checkout",
+      "source_sha256": "83cc8c17cc8563b3888bb702da553c88754d18652ec7985bc66a68f09b5aa1cb",
+      "public_sha256": "83cc8c17cc8563b3888bb702da553c88754d18652ec7985bc66a68f09b5aa1cb",
+      "sanitized_paths": false
+    },
+    {
+      "target": "tools/run_wuji_a2c.py",
+      "origin": "tools/run_wuji_a2c.py from the research checkout",
+      "source_sha256": "b56d24c010ddc10ec6eb870a8fcacd0cf9c991099b3bd7717360f392aa1d2d94",
+      "public_sha256": "b56d24c010ddc10ec6eb870a8fcacd0cf9c991099b3bd7717360f392aa1d2d94",
+      "sanitized_paths": false
+    },
+    {
       "target": "dreamerv3/__init__.py",
       "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/dreamerv3/__init__.py",
       "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",

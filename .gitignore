@@ -15,6 +15,7 @@ libdevice.10.bc
 # Local research artifacts and generated outputs
 analysis_outputs
 outputs/
+.venv*/
 logs/
 tmp_runs/
 partition_backups/
