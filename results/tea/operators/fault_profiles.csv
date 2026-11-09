@@ -1,0 +1,5 @@
+profile,subtype_ids,subtype_count,wrapper_default_episode_probability,reported_episode_probability,severity_values,manifest_multiplier,per_eligible_draw_probability,cooldown,note
+benchmark_train,2;3;4;7;8;20;23;27,8,0.25,0.5,"0.05,0.1",1.0,"0.05,0.1",12,"One family, subtype, and severity selected per fault-enabled episode; new activation requires eligibility and no cooldown."
+benchmark_seen,2;3;4;7;8;20;23;27,8,0.25,0.5,"0.05,0.1",1.0,"0.05,0.1",8,"One family, subtype, and severity selected per fault-enabled episode; new activation requires eligibility and no cooldown."
+benchmark_holdout,11;14;15;18;19;31;34,7,0.25,0.5,"0.05,0.1",1.0,"0.05,0.1",8,"One family, subtype, and severity selected per fault-enabled episode; new activation requires eligibility and no cooldown."
+benchmark_sparse,11;14;15;18;19;31;34,7,0.5,0.5,"0.01,0.03",1.0,"0.01,0.03",16,"One family, subtype, and severity selected per fault-enabled episode; new activation requires eligibility and no cooldown."

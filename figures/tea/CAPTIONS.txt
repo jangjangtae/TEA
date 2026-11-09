@@ -1,0 +1,28 @@
+TEA final paper figures
+
+Five figures only. PNG: 600 dpi; vector PDF: pdf/. No learning or evaluation was run.
+All figures are 7.16 inches wide; keep this two-column width for 9 pt labels.
+01-03 use the common all-method cohort: Clean 1 repeat; Holdout/Sparse 3 repeats.
+04-05 use matched 3-repeat cohorts. Do not substitute these return values into 01 selectively.
+Figures 01-03: sample SD. Figures 04-05: exploratory paired t 95% CI (n=5 pairs, df=4).
+No independent pretraining-seed generalization, no universal fault-detection superiority.
+P1, WUJI and opportunity/oracle diagnostics remain separate results, not pooled here.
+All three repetition-averaged exposure measures keep the denominator of seven subtypes.
+Source data are not changed. CSVs in data/ retain internal FATE IDs only as provenance.
+
+Suggested captions (English):
+
+01_performance_behavior
+Clean-evaluation task return and coarse context-action counts. Each policy has one 30K-callback Clean evaluation in this common all-method cohort. Return excludes intrinsic bonus; context-action counts are not spatial or code coverage. Small points represent five adaptation seeds, and large symbols and bars show means and sample standard deviations. Initial denotes five evaluation slots of one fixed P0 policy, not five trained policies. Circles and open squares distinguish fault-seeded and clean adaptation. All adaptations start from P0. Dense, Sparse, Sparse x0.72, and Abs. level denote DenseSurprise, SparseSurprise, its coefficient-scaled variant, and AbsoluteSameShape.
+
+02_operator_exposure
+Wrapper-recorded operator-subtype exposure in Holdout and Sparse profiles. Each point first averages three 60K-callback evaluations within one policy; coverage is the fraction of seven subtypes observed in each evaluation, not the union across repetitions. Exposure is not independently verified failure detection. Small points represent five adaptation seeds, and large symbols and bars show means and sample standard deviations. Initial denotes five evaluation slots of one fixed P0 policy, not five trained policies. Circles and open squares distinguish fault-seeded and clean adaptation. All adaptations start from P0. Dense, Sparse, Sparse x0.72, and Abs. level denote DenseSurprise, SparseSurprise, its coefficient-scaled variant, and AbsoluteSameShape.
+
+03_reward_scale
+Realized training bonus versus Clean-evaluation task return under clean and fault-seeded adaptation. Small symbols show paired measurements for each of five adaptation seeds; large symbols and horizontal/vertical bars show means and sample standard deviations. Bonus is averaged over non-reset training transitions within each run; return uses the common single 30K-callback Clean evaluation. The 0.72 coefficient was fixed using earlier observed bonus ratios, not an independent calibration probe. This is a reward-scale sensitivity comparison, not an exactly matched on-policy bonus-budget ablation.
+
+04_replay_sensitivity
+Replay-initialization sensitivity in fault-seeded adaptation. The first two rows show TEA minus TaskOnly under empty and restored clean-experience replay, respectively. Interaction is the restored gap minus the empty-replay gap. Replay capacity (100K), train ratio (128), P0 agent/optimizer initialization and 1M new-callback budget are fixed. This is not a full pretraining resume and does not diagnose the earlier P1 effect. Small gray points show the five paired seed differences; blue symbols and bars show mean differences and exploratory pointwise 95% paired t intervals (df=4), without multiplicity correction. Evaluations are averaged within each policy before pairing adaptation seeds. Each policy has three Clean (30K callbacks each), Holdout (60K), and Sparse (60K) evaluations; the panels display Clean task return, Clean context-action counts, and Sparse subtype exposure, respectively. Coverage differences are percentage points. All policies start from one P0 checkpoint. Intervals spanning zero do not establish equivalence. Seed pairing does not imply identical subsequent trajectories.
+
+05_first_transition_ablation
+First-transition bonus ablation in fault-seeded adaptation. No-first suppresses only the bonus on the first non-reset transition of each episode; its normalized surprise score is retained for the next temporal difference. All other reward rules and the 1M-callback adaptation protocol are unchanged. All five adaptation seeds, including the final two completed runs, are included. Small gray points show the five paired seed differences; blue symbols and bars show mean differences and exploratory pointwise 95% paired t intervals (df=4), without multiplicity correction. Evaluations are averaged within each policy before pairing adaptation seeds. Each policy has three Clean (30K callbacks each), Holdout (60K), and Sparse (60K) evaluations; the panels display Clean task return, Clean context-action counts, and Sparse subtype exposure, respectively. Coverage differences are percentage points. All policies start from one P0 checkpoint. Intervals spanning zero do not establish equivalence. Seed pairing does not imply identical subsequent trajectories.

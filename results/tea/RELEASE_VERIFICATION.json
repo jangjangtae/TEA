@@ -1,0 +1,14 @@
+{
+  "analysis_and_layout_tests": 19,
+  "reward_mode_tests": 18,
+  "operator_contract_tests": 6,
+  "stdlib_recompute_tests": 6,
+  "runtime_command_configurations_validated": 4,
+  "replay_evaluations_reaggregated": 270,
+  "replay_aggregate_values_verified": 756,
+  "figure_interval_fields_verified": 54,
+  "figures_regenerated": 5,
+  "documentation_links_verified": 21,
+  "new_training_runs": 0,
+  "new_policy_evaluation_rollouts": 0
+}

@@ -1,0 +1,7 @@
+method,display_method,replay,adaptation_profile,prior
+FaultAdaptTaskOnly,FaultAdaptTaskOnly,fresh,benchmark_train,P0
+FaultAdaptFATE,FaultAdaptTEA,fresh,benchmark_train,P0
+FaultAdaptSparseSurprise,FaultAdaptSparseSurprise,fresh,benchmark_train,P0
+FaultAdaptSparseMagnitude072,FaultAdaptSparseMagnitude072,fresh,benchmark_train,P0
+FaultRestoredTaskOnly,FaultRestoredTaskOnly,restored,benchmark_train,P0
+FaultRestoredTEA,FaultRestoredTEA,restored,benchmark_train,P0

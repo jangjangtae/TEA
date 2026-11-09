@@ -1,0 +1,890 @@
+defaults:
+
+  logdir: ~/logdir/{timestamp}
+  replica: 0
+  replicas: 1
+  method: name
+  task: dummy_disc
+  seed: 0
+  script: train
+  batch_size: 16
+  batch_length: 64
+  report_length: 32
+  consec_train: 1
+  consec_report: 1
+  replay_context: 1
+  random_agent: False
+  clock_addr: ''
+  clock_port: ''
+  ipv6: False
+  errfile: False
+
+  logger:
+    outputs: [jsonl, scope]
+    filter: 'score|length|fps|ratio|train/loss/|train/rand/'
+    timer: True
+    fps: 15
+    user: ''
+
+  env:
+    atari: {size: [96, 96], repeat: 4, sticky: True, gray: True, actions: all, lives: unused, noops: 30, autostart: False, pooling: 2, aggregate: max, resize: pillow, clip_reward: False}
+    procgen: {size: [96, 96], resize: pillow}
+    crafter: {size: [64, 64], logs: False, use_logdir: True}
+    craftax: {logs: True, length: 10000, use_seed: True, platform: cpu}
+    hasard: {size: [64, 64], root: /mnt/ssd2tb/src/HASARD, resolution: 160X120, frame_skip: 4, use_seed: True, full_actions: False, hard_constraint: False}
+    coom: {root: .deps/COOM, size: [64, 64], repeat: 4, length: 0, use_seed: True, sparse_rewards: False, resolution: 160X120, frame_stack: 1, action_space: multi, reward_scaler_traversal: -1.0, reward_kill_rag: -1.0}
+    minigrid: {obs_mode: symbolic, size: [64, 64], tile_size: 8, length: 360, use_seed: True, fault_profile: clean, progress_reward: False, progress_key_reward: 0.1, progress_door_reward: 0.2, progress_position_reward: 0.01, action_set: full}
+    minatar: {sticky_action_prob: 0.1, difficulty_ramping: True, minimal_actions: False, length: 10000, use_seed: True}
+    vizdoom: {size: [64, 64], repeat: 4, length: 300, use_seed: True, scenarios: '', action_set: single, variables: True, gray: False, doom_skill: 3, no_monsters: False, fault_profile: clean, episode_prob: 0.0, manifest_prob: 1.0, severity: 0.25, cooldown: 8, route_mode: random_basic, progress_reward: False, progress_cell_size: 384.0, progress_cell_reward: 0.03, progress_item_reward: 0.08, progress_kill_reward: 0.05, progress_secret_reward: 0.10, progress_step_penalty: 0.0, progress_max_cell_reward: 1.2, progress_use_reward: 0.0, progress_attack_reward: 0.0, progress_ammo_reward: 0.0, progress_health_reward: 0.0, progress_armor_reward: 0.0, progress_damage_penalty: 0.0, progress_max_interaction_reward: 0.0}
+    atari100k: {size: [64, 64], repeat: 4, sticky: False, gray: False, actions: needed, lives: unused, noops: 30, autostart: False, resize: pillow, clip_reward: False}
+    dmlab: {size: [64, 64], repeat: 4, episodic: True, use_seed: True}
+    minecraft: {size: [64, 64], break_speed: 100.0, logs: False, length: 36000}
+    dmc: {size: [64, 64], repeat: 1, proprio: True, image: True, camera: -1}
+    loconav: {size: [64, 64], repeat: 1, camera: -1}
+
+  replay:
+    size: 5e6
+    storage: ram
+    online: True
+    fracs: {uniform: 1.0, priority: 0.0, recency: 0.0}
+    prio: {exponent: 0.8, maxfrac: 0.5, initial: inf, zero_on_sample: True}
+    priosignal: model
+    recexp: 1.0
+    chunksize: 1024
+
+  fault:
+    enabled: False
+    ref_ckpt: ''
+    norm_stats: ''
+    beta: 0.1
+    clip: 1.0
+    use_latent_kl: True
+    use_reward_error: True
+    use_recon_error: False
+    use_kl_bound: False
+    score_source: latent_reward
+    task_reward_source: delivered
+    log_only: True
+    w_kl: 1.0
+    w_reward: 1.0
+    norm_mode: p95
+    reward_mode: dense
+    reward_threshold: 1.0
+    reward_delta_threshold: 0.5
+    reward_gate: none
+    context_min_count: 50
+    semantic_coverage_beta: 0.0
+    unique_suspicious_beta: 0.0
+    repeat_suspicious_penalty: 0.0
+    suspicious_threshold: 1.0
+    adaptive_beta: False
+    adaptive_task_target: 0.0
+    adaptive_beta_down: 0.9
+    adaptive_beta_up: 1.05
+    adaptive_beta_min: 0.0
+    adaptive_beta_max: 1.0
+    adaptive_task_ema: 0.1
+    constraint_mode: none
+    constraint_task_target: 0.0
+    constraint_lambda_init: 1.0
+    constraint_lambda_lr: 0.05
+    constraint_lambda_min: 0.0
+    constraint_lambda_max: 10.0
+    constraint_novelty_scale: 1.0
+    constraint_task_scale: 1.0
+    constraint_warmup_episodes: 10
+    trace: fault_score_trace.jsonl
+
+  calibration:
+    episodes: 100
+    steps: 0
+    out: ''
+    trace: ''
+
+  run:
+    steps: 1e10
+    duration: 0
+    train_ratio: 32.0
+    log_every: 120
+    report_every: 300
+    save_every: 900
+    envs: 16
+    eval_envs: 4
+    eval_eps: 1
+    report_batches: 1
+    from_checkpoint: ''
+    episode_timeout: 180
+    actor_addr: 'localhost:{auto}'
+    replay_addr: 'localhost:{auto}'
+    logger_addr: 'localhost:{auto}'
+    actor_batch: -1
+    actor_threads: 1
+    agent_process: False
+    remote_replay: False
+    remote_envs: False
+    usage: {psutil: True, nvsmi: True, gputil: False, malloc: False, gc: False}
+    debug: True
+
+  jax:
+    platform: cuda
+    compute_dtype: bfloat16
+    policy_devices: [0]
+    train_devices: [0]
+    mock_devices: 0
+    prealloc: True
+    jit: True
+    debug: False
+    compilation_cache: True
+    gpuflags: True
+    autotune: 1
+    deterministic: True
+    expect_devices: 0
+    enable_policy: True
+    prefetch: True
+    profiler: True
+    donate_train: True
+    coordinator_address: ''
+
+  agent:
+    obs_exclude: [none]
+    loss_scales: {rec: 1.0, rew: 1.0, con: 1.0, dyn: 1.0, rep: 0.1, policy: 1.0, value: 1.0, repval: 0.3}
+    opt: {lr: 4e-5, agc: 0.3, eps: 1e-20, beta1: 0.9, beta2: 0.999, momentum: True, wd: 0.0, schedule: const, warmup: 1000, anneal: 0}
+    ac_grads: False
+    dyn:
+      typ: rssm
+      rssm: {deter: 8192, hidden: 1024, stoch: 32, classes: 64, act: silu, norm: rms, unimix: 0.01, outscale: 1.0, winit: trunc_normal_in, imglayers: 2, obslayers: 1, dynlayers: 1, absolute: False, blocks: 8, free_nats: 1.0}
+    enc:
+      typ: simple
+      simple: {depth: 64, mults: [2, 3, 4, 4], layers: 3, units: 1024, act: silu, norm: rms, winit: trunc_normal_in, symlog: True, outer: False, kernel: 5, strided: False}
+    dec:
+      typ: simple
+      simple: {depth: 64, mults: [2, 3, 4, 4], layers: 3, units: 1024, act: silu, norm: rms, outscale: 1.0, winit: trunc_normal_in, outer: False, kernel: 5, bspace: 8, strided: False}
+    rewhead: {layers: 1, units: 1024, act: silu, norm: rms, output: symexp_twohot, outscale: 0.0, winit: trunc_normal_in, bins: 255}
+    conhead: {layers: 1, units: 1024, act: silu, norm: rms, output: binary, outscale: 1.0, winit: trunc_normal_in}
+    policy: {layers: 3, units: 1024, act: silu, norm: rms, minstd: 0.1, maxstd: 1.0, outscale: 0.01, unimix: 0.01, winit: trunc_normal_in}
+    value: {layers: 3, units: 1024, act: silu, norm: rms, output: symexp_twohot, outscale: 0.0, winit: trunc_normal_in, bins: 255}
+    policy_dist_disc: categorical
+    policy_dist_cont: bounded_normal
+    imag_last: 0
+    imag_length: 15
+    horizon: 333
+    contdisc: True
+    imag_loss: {slowtar: False, lam: 0.95, actent: 3e-4, slowreg: 1.0}
+    repl_loss: {slowtar: False, lam: 0.95, slowreg: 1.0}
+    slowvalue: {rate: 0.02, every: 1}
+    retnorm: {impl: perc, rate: 0.01, limit: 1.0, perclo: 5.0, perchi: 95.0, debias: False}
+    valnorm: {impl: none, rate: 0.01, limit: 1e-8}
+    advnorm: {impl: none, rate: 0.01, limit: 1e-8}
+    reward_grad: True
+    repval_loss: True
+    repval_grad: True
+    report: True
+    report_gradnorms: False
+
+size1m: &size1m
+  .*\.rssm: {deter: 512, hidden: 64, classes: 4}
+  .*\.depth: 4
+  .*\.units: 64
+
+size12m: &size12m
+  .*\.rssm: {deter: 2048, hidden: 256, classes: 16}
+  .*\.depth: 16
+  .*\.units: 256
+
+size25m: &size25m
+  .*\.rssm: {deter: 3072, hidden: 384, classes: 24}
+  .*\.depth: 24
+  .*\.units: 384
+
+size50m: &size50m
+  .*\.rssm: {deter: 4096, hidden: 512, classes: 32}
+  .*\.depth: 32
+  .*\.units: 512
+
+size100m: &size100m
+  .*\.rssm: {deter: 6144, hidden: 768, classes: 48}
+  .*\.depth: 48
+  .*\.units: 768
+
+size200m: &size200m
+  .*\.rssm: {deter: 8192, hidden: 1024, classes: 64}
+  .*\.depth: 64
+  .*\.units: 1024
+
+size400m: &size400m
+  .*\.rssm: {deter: 12288, hidden: 1536, classes: 96}
+  .*\.depth: 96
+  .*\.units: 1536
+
+minecraft:
+  task: minecraft_diamond
+
+dmlab:
+  task: dmlab_explore_goal_locations_small
+  run: {steps: 2.6e7, train_ratio: 32}
+
+atari:
+  task: atari_pong
+  run: {steps: 5.1e7, train_ratio: 32}
+
+procgen:
+  task: procgen_coinrun
+  run: {steps: 1.1e8, train_ratio: 64}
+
+atari100k:
+  task: atari100k_pong
+  run: {steps: 1.1e5, envs: 1, train_ratio: 256}
+
+crafter:
+  task: crafter_reward
+  run: {steps: 1.1e6, envs: 1, train_ratio: 512}
+
+craftax:
+  task: craftax_classic_pixels
+  run: {steps: 1.1e6, envs: 16, train_ratio: 512}
+
+craftax_symbolic:
+  <<: *size1m
+  task: craftax_classic_symbolic
+  run: {steps: 1.1e6, envs: 16, train_ratio: 512}
+
+minatar:
+  <<: *size1m
+  task: minatar_seaquest
+  run: {steps: 2e5, envs: 16, train_ratio: 64}
+  replay.size: 2e5
+
+minatar_freeway:
+  <<: *size1m
+  task: minatar_freeway
+  run: {steps: 2e5, envs: 16, train_ratio: 64}
+  replay.size: 2e5
+
+minatar_breakout:
+  <<: *size1m
+  task: minatar_breakout
+  run: {steps: 2e5, envs: 16, train_ratio: 64}
+  replay.size: 2e5
+
+hasard_remedy_l1:
+  <<: *size1m
+  task: hasard_remedy_rush_l1
+  run: {steps: 3e5, envs: 8, train_ratio: 128}
+  replay.size: 2e5
+
+hasard_volcanic_l1:
+  <<: *size1m
+  task: hasard_volcanic_venture_l1
+  run: {steps: 3e5, envs: 8, train_ratio: 128}
+  replay.size: 2e5
+
+hasard_collateral_l1:
+  <<: *size1m
+  task: hasard_collateral_damage_l1
+  run: {steps: 3e5, envs: 8, train_ratio: 128}
+  replay.size: 2e5
+
+coom_runandgun:
+  <<: *size1m
+  task: coom_run_and_gun_default
+  run: {steps: 3e5, envs: 8, train_ratio: 64, log_every: 60, report_every: 300, save_every: 600}
+  replay.size: 1e5
+
+coom_runandgun_stack4:
+  <<: *size1m
+  task: coom_run_and_gun_default
+  env.coom.frame_stack: 4
+  env.coom.action_space: multi
+  run: {steps: 1e6, envs: 8, train_ratio: 64, log_every: 60, report_every: 300, save_every: 600}
+  replay.size: 2e5
+
+coom_runandgun_stack4_simple:
+  <<: *size1m
+  task: coom_run_and_gun_default
+  env.coom.frame_stack: 4
+  env.coom.action_space: simple
+  run: {steps: 5e5, envs: 8, train_ratio: 64, log_every: 60, report_every: 300, save_every: 600}
+  replay.size: 2e5
+
+coom_runandgun_wm_stackonly_multi_dense:
+  <<: *size1m
+  task: coom_run_and_gun_default
+  agent.obs_exclude: [image]
+  env.coom.frame_stack: 4
+  env.coom.action_space: multi
+  run: {steps: 5e6, envs: 8, train_ratio: 64, log_every: 60, report_every: 300, save_every: 600}
+  replay.size: 2e5
+
+coom_runandgun_wm_stackonly_simple_dense:
+  <<: *size1m
+  task: coom_run_and_gun_default
+  agent.obs_exclude: [image]
+  env.coom.frame_stack: 4
+  env.coom.action_space: simple
+  run: {steps: 5e6, envs: 8, train_ratio: 64, log_every: 60, report_every: 300, save_every: 600}
+  replay.size: 2e5
+
+coom_runandgun_wm_stackonly_simple_killonly:
+  <<: *size1m
+  task: coom_run_and_gun_default
+  agent.obs_exclude: [image]
+  env.coom.frame_stack: 4
+  env.coom.action_space: simple
+  env.coom.sparse_rewards: True
+  run: {steps: 5e6, envs: 8, train_ratio: 64, log_every: 60, report_every: 300, save_every: 600}
+  replay.size: 2e5
+
+coom_runandgun_wm_stackonly_simple_killheavy:
+  <<: *size1m
+  task: coom_run_and_gun_default
+  agent.obs_exclude: [image]
+  env.coom.frame_stack: 4
+  env.coom.action_space: simple
+  env.coom.reward_scaler_traversal: 0.0002
+  env.coom.reward_kill_rag: 3.0
+  run: {steps: 5e6, envs: 8, train_ratio: 64, log_every: 60, report_every: 300, save_every: 600}
+  replay.size: 2e5
+
+coom_runandgun_wm_stackonly_multi_repeat2:
+  <<: *size1m
+  task: coom_run_and_gun_default
+  agent.obs_exclude: [image]
+  env.coom.frame_stack: 4
+  env.coom.action_space: multi
+  env.coom.repeat: 2
+  run: {steps: 2.5e6, envs: 8, train_ratio: 64, log_every: 60, report_every: 300, save_every: 600}
+  replay.size: 2e5
+
+coom_runandgun_wm_stackonly_simple_dense_repeat2:
+  <<: *size1m
+  task: coom_run_and_gun_default
+  agent.obs_exclude: [image]
+  env.coom.frame_stack: 4
+  env.coom.action_space: simple
+  env.coom.repeat: 2
+  run: {steps: 5e6, envs: 8, train_ratio: 64, log_every: 60, report_every: 300, save_every: 600}
+  replay.size: 2e5
+
+coom_runandgun_wm_stackonly_simple_killheavy_repeat2:
+  <<: *size1m
+  task: coom_run_and_gun_default
+  agent.obs_exclude: [image]
+  env.coom.frame_stack: 4
+  env.coom.action_space: simple
+  env.coom.repeat: 2
+  env.coom.reward_scaler_traversal: 0.0002
+  env.coom.reward_kill_rag: 3.0
+  run: {steps: 5e6, envs: 8, train_ratio: 64, log_every: 60, report_every: 300, save_every: 600}
+  replay.size: 2e5
+
+coom_runandgun_wm_size12m_stackonly_simple_killheavy:
+  <<: *size12m
+  task: coom_run_and_gun_default
+  agent.obs_exclude: [image]
+  env.coom.frame_stack: 4
+  env.coom.action_space: simple
+  env.coom.reward_scaler_traversal: 0.0002
+  env.coom.reward_kill_rag: 3.0
+  run: {steps: 2e6, envs: 8, train_ratio: 64, log_every: 60, report_every: 300, save_every: 600}
+  replay.size: 2e5
+
+minigrid:
+  <<: *size1m
+  task: minigrid_doorkey6x6
+  run: {steps: 3e5, envs: 16, train_ratio: 128}
+  replay.size: 5e5
+
+minigrid_progress:
+  <<: *size1m
+  task: minigrid_doorkey6x6
+  env.minigrid.progress_reward: True
+  env.minigrid.progress_key_reward: 0.1
+  env.minigrid.progress_door_reward: 0.2
+  run: {steps: 3e5, envs: 16, train_ratio: 128}
+  replay.size: 5e5
+
+minigrid_vision:
+  <<: *size1m
+  task: minigrid_doorkey6x6
+  env.minigrid.obs_mode: rgb
+  run: {steps: 3e5, envs: 16, train_ratio: 128}
+  replay.size: 1e5
+
+minigrid_mixed_observable:
+  <<: *size1m
+  task: minigrid_mixed_observable
+  env.minigrid.action_set: navigation
+  env.minigrid.length: 220
+  run: {steps: 3e5, envs: 16, train_ratio: 128}
+  replay.size: 5e5
+
+minigrid_mixed_observable_progress:
+  <<: *size1m
+  task: minigrid_mixed_observable
+  env.minigrid.action_set: navigation
+  env.minigrid.length: 220
+  env.minigrid.progress_reward: True
+  env.minigrid.progress_position_reward: 0.01
+  run: {steps: 3e5, envs: 16, train_ratio: 128}
+  replay.size: 5e5
+
+vizdoom:
+  <<: *size1m
+  task: vizdoom_basic
+  run: {steps: 3e5, envs: 8, train_ratio: 128}
+  replay.size: 1e5
+
+vizdoom_health:
+  <<: *size1m
+  task: vizdoom_health_gathering
+  env.vizdoom.length: 2100
+  env.vizdoom.action_set: basic
+  run: {steps: 3e5, envs: 8, train_ratio: 128}
+  replay.size: 1e5
+
+vizdoom_defend:
+  <<: *size1m
+  task: vizdoom_defend_the_center
+  env.vizdoom.length: 2100
+  env.vizdoom.action_set: basic
+  run: {steps: 3e5, envs: 8, train_ratio: 128}
+  replay.size: 1e5
+
+vizdoom_switchroom:
+  <<: *size1m
+  task: vizdoom_fate_switchroom_proto
+  env.vizdoom.length: 105
+  env.vizdoom.repeat: 4
+  env.vizdoom.action_set: doom_basic
+  env.vizdoom.scenarios: vizdoom_custom
+  env.vizdoom.route_mode: random_basic
+  run: {steps: 3e5, envs: 8, train_ratio: 128}
+  replay.size: 1e5
+
+vizdoom_switchroom_fault:
+  <<: *size1m
+  task: vizdoom_fate_switchroom_proto
+  env.vizdoom.length: 105
+  env.vizdoom.repeat: 4
+  env.vizdoom.action_set: doom_basic
+  env.vizdoom.scenarios: vizdoom_custom
+  env.vizdoom.fault_profile: doomwiki_train
+  env.vizdoom.episode_prob: 0.5
+  env.vizdoom.severity: 1.0
+  env.vizdoom.cooldown: 16
+  run: {steps: 3e5, envs: 8, train_ratio: 128}
+  replay.size: 1e5
+
+vizdoom_wikiroom:
+  <<: *size1m
+  task: vizdoom_fate_wikiroom_proto
+  env.vizdoom.length: 105
+  env.vizdoom.repeat: 4
+  env.vizdoom.action_set: doom_basic
+  env.vizdoom.scenarios: vizdoom_custom
+  run: {steps: 3e5, envs: 8, train_ratio: 128}
+  replay.size: 1e5
+
+vizdoom_wikiroom_fault:
+  <<: *size1m
+  task: vizdoom_fate_wikiroom_proto
+  env.vizdoom.length: 105
+  env.vizdoom.repeat: 4
+  env.vizdoom.action_set: doom_basic
+  env.vizdoom.scenarios: vizdoom_custom
+  env.vizdoom.fault_profile: doomwiki_train
+  env.vizdoom.episode_prob: 0.5
+  env.vizdoom.severity: 1.0
+  env.vizdoom.cooldown: 16
+  run: {steps: 3e5, envs: 8, train_ratio: 128}
+  replay.size: 1e5
+
+vizdoom_wikiroom_ultrasparse_fault:
+  <<: *size1m
+  task: vizdoom_fate_wikiroom_proto
+  env.vizdoom.length: 105
+  env.vizdoom.repeat: 4
+  env.vizdoom.action_set: doom_basic
+  env.vizdoom.scenarios: vizdoom_custom
+  env.vizdoom.fault_profile: doomwiki_sparse
+  env.vizdoom.episode_prob: 0.03
+  env.vizdoom.severity: 0.25
+  env.vizdoom.cooldown: 32
+  run: {steps: 3e5, envs: 8, train_ratio: 128}
+  replay.size: 1e5
+
+vizdoom_regression:
+  <<: *size1m
+  task: vizdoom_fate_regression_map_v1
+  env.vizdoom.length: 720
+  env.vizdoom.repeat: 4
+  env.vizdoom.action_set: doom_basic
+  env.vizdoom.scenarios: vizdoom_custom
+  run: {steps: 3e5, envs: 8, train_ratio: 128}
+  replay.size: 1e5
+
+vizdoom_freedoom1_clean:
+  <<: *size1m
+  task: vizdoom_freedoom1_e1m1
+  env.vizdoom.length: 4200
+  env.vizdoom.repeat: 4
+  env.vizdoom.action_set: doom_basic
+  env.vizdoom.fault_profile: clean
+  env.vizdoom.progress_reward: True
+  env.vizdoom.progress_cell_size: 320.0
+  env.vizdoom.progress_cell_reward: 0.04
+  env.vizdoom.progress_item_reward: 0.12
+  env.vizdoom.progress_kill_reward: 0.10
+  env.vizdoom.progress_secret_reward: 0.20
+  env.vizdoom.progress_step_penalty: -0.0001
+  env.vizdoom.progress_max_cell_reward: 3.0
+  env.vizdoom.progress_use_reward: 0.015
+  env.vizdoom.progress_attack_reward: 0.010
+  env.vizdoom.progress_ammo_reward: 0.015
+  env.vizdoom.progress_health_reward: 0.010
+  env.vizdoom.progress_armor_reward: 0.010
+  env.vizdoom.progress_damage_penalty: 0.002
+  env.vizdoom.progress_max_interaction_reward: 1.0
+  run: {steps: 1e6, envs: 32, train_ratio: 128}
+  replay.size: 5e5
+
+vizdoom_freedoom1_eval:
+  <<: *size1m
+  task: vizdoom_freedoom1_e1m1
+  env.vizdoom.length: 4200
+  env.vizdoom.repeat: 4
+  env.vizdoom.action_set: doom_basic
+  env.vizdoom.fault_profile: clean
+  env.vizdoom.progress_reward: False
+  run: {steps: 1e5, envs: 32, train_ratio: 128}
+  replay.size: 5e5
+
+vizdoom_freedoom1_reduced_clean:
+  <<: *size1m
+  task: vizdoom_freedoom1_e1m1
+  env.vizdoom.length: 4200
+  env.vizdoom.repeat: 4
+  env.vizdoom.action_set: doom_nav_combat
+  env.vizdoom.fault_profile: clean
+  env.vizdoom.progress_reward: True
+  env.vizdoom.progress_cell_size: 320.0
+  env.vizdoom.progress_cell_reward: 0.04
+  env.vizdoom.progress_item_reward: 0.12
+  env.vizdoom.progress_kill_reward: 0.10
+  env.vizdoom.progress_secret_reward: 0.20
+  env.vizdoom.progress_step_penalty: -0.0001
+  env.vizdoom.progress_max_cell_reward: 3.0
+  env.vizdoom.progress_use_reward: 0.015
+  env.vizdoom.progress_attack_reward: 0.010
+  env.vizdoom.progress_ammo_reward: 0.015
+  env.vizdoom.progress_health_reward: 0.010
+  env.vizdoom.progress_armor_reward: 0.010
+  env.vizdoom.progress_damage_penalty: 0.002
+  env.vizdoom.progress_max_interaction_reward: 1.0
+  env.vizdoom.doom_skill: 1
+  env.vizdoom.no_monsters: False
+  run: {steps: 3e5, envs: 32, train_ratio: 128}
+  replay.size: 3e5
+
+vizdoom_freedoom1_reduced_eval:
+  <<: *size1m
+  task: vizdoom_freedoom1_e1m1
+  env.vizdoom.length: 4200
+  env.vizdoom.repeat: 4
+  env.vizdoom.action_set: doom_nav_combat
+  env.vizdoom.fault_profile: clean
+  env.vizdoom.progress_reward: False
+  env.vizdoom.doom_skill: 1
+  env.vizdoom.no_monsters: False
+  run: {steps: 5e4, envs: 8, train_ratio: 128}
+  replay.size: 3e5
+
+vizdoom_regression_fault:
+  <<: *size1m
+  task: vizdoom_fate_regression_map_v1
+  env.vizdoom.length: 720
+  env.vizdoom.repeat: 4
+  env.vizdoom.action_set: doom_basic
+  env.vizdoom.scenarios: vizdoom_custom
+  env.vizdoom.route_mode: random_basic
+  env.vizdoom.fault_profile: doomreg_train
+  env.vizdoom.episode_prob: 0.5
+  env.vizdoom.severity: 1.0
+  env.vizdoom.cooldown: 16
+  run: {steps: 3e5, envs: 8, train_ratio: 128}
+  replay.size: 1e5
+
+vizdoom_regression_holdout_fault:
+  <<: *size1m
+  task: vizdoom_fate_regression_map_v1
+  env.vizdoom.length: 720
+  env.vizdoom.repeat: 4
+  env.vizdoom.action_set: doom_basic
+  env.vizdoom.scenarios: vizdoom_custom
+  env.vizdoom.route_mode: random_basic
+  env.vizdoom.fault_profile: doomreg_holdout
+  env.vizdoom.episode_prob: 0.5
+  env.vizdoom.severity: 1.0
+  env.vizdoom.cooldown: 16
+  run: {steps: 3e5, envs: 8, train_ratio: 128}
+  replay.size: 1e5
+
+vizdoom_regression_sparse_fault:
+  <<: *size1m
+  task: vizdoom_fate_regression_map_v1
+  env.vizdoom.length: 720
+  env.vizdoom.repeat: 4
+  env.vizdoom.action_set: doom_basic
+  env.vizdoom.scenarios: vizdoom_custom
+  env.vizdoom.route_mode: random_basic
+  env.vizdoom.fault_profile: doomreg_sparse
+  env.vizdoom.episode_prob: 0.05
+  env.vizdoom.severity: 0.35
+  env.vizdoom.cooldown: 32
+  run: {steps: 3e5, envs: 8, train_ratio: 128}
+  replay.size: 1e5
+
+vizdoom_regression_v2:
+  <<: *size1m
+  task: vizdoom_fate_regression_map_v2
+  env.vizdoom.length: 900
+  env.vizdoom.repeat: 4
+  env.vizdoom.action_set: doom_basic
+  env.vizdoom.scenarios: vizdoom_custom
+  run: {steps: 3e5, envs: 8, train_ratio: 128}
+  replay.size: 1e5
+
+vizdoom_regression_v2_curriculum:
+  <<: *size1m
+  task: vizdoom_fate_regression_map_v2
+  env.vizdoom.length: 900
+  env.vizdoom.repeat: 4
+  env.vizdoom.action_set: doom_basic
+  env.vizdoom.scenarios: vizdoom_custom
+  env.vizdoom.route_mode: fixed
+  env.vizdoom.progress_reward: True
+  env.vizdoom.progress_cell_size: 256.0
+  env.vizdoom.progress_cell_reward: 0.025
+  env.vizdoom.progress_max_cell_reward: 1.5
+  env.vizdoom.progress_step_penalty: 0.0
+  run: {steps: 1e6, envs: 32, train_ratio: 128}
+  replay.size: 5e5
+
+vizdoom_regression_v2_micro_exit:
+  <<: *size1m
+  task: vizdoom_fate_regression_map_v2_exit_near
+  env.vizdoom.length: 220
+  env.vizdoom.repeat: 2
+  env.vizdoom.action_set: doom_basic
+  env.vizdoom.scenarios: vizdoom_custom
+  env.vizdoom.route_mode: exit_near
+  env.vizdoom.progress_reward: False
+  run: {steps: 2e5, envs: 32, train_ratio: 32}
+  replay.size: 2e6
+
+vizdoom_regression_v2_micro_gate:
+  <<: *size1m
+  task: vizdoom_fate_regression_map_v2_gate_near
+  env.vizdoom.length: 260
+  env.vizdoom.repeat: 2
+  env.vizdoom.action_set: doom_basic
+  env.vizdoom.scenarios: vizdoom_custom
+  env.vizdoom.route_mode: gate_near
+  env.vizdoom.progress_reward: False
+  run: {steps: 3e5, envs: 32, train_ratio: 32}
+  replay.size: 2e6
+
+vizdoom_regression_v2_micro_power:
+  <<: *size1m
+  task: vizdoom_fate_regression_map_v2_power_near
+  env.vizdoom.length: 260
+  env.vizdoom.repeat: 2
+  env.vizdoom.action_set: doom_basic
+  env.vizdoom.scenarios: vizdoom_custom
+  env.vizdoom.route_mode: power_near
+  env.vizdoom.progress_reward: False
+  run: {steps: 3e5, envs: 32, train_ratio: 32}
+  replay.size: 2e6
+
+vizdoom_regression_v2_micro_gate_to_exit:
+  <<: *size1m
+  task: vizdoom_fate_regression_map_v2_gate_near
+  env.vizdoom.length: 520
+  env.vizdoom.repeat: 2
+  env.vizdoom.action_set: doom_basic
+  env.vizdoom.scenarios: vizdoom_custom
+  env.vizdoom.route_mode: gate_to_exit
+  env.vizdoom.progress_reward: False
+  run: {steps: 5e5, envs: 32, train_ratio: 32}
+  replay.size: 2e6
+
+vizdoom_regression_v2_micro_power_to_exit:
+  <<: *size1m
+  task: vizdoom_fate_regression_map_v2_power_near
+  env.vizdoom.length: 520
+  env.vizdoom.repeat: 2
+  env.vizdoom.action_set: doom_basic
+  env.vizdoom.scenarios: vizdoom_custom
+  env.vizdoom.route_mode: power_to_exit
+  env.vizdoom.progress_reward: False
+  run: {steps: 5e5, envs: 32, train_ratio: 32}
+  replay.size: 2e6
+
+vizdoom_regression_v2_ordered_fixed:
+  <<: *size1m
+  task: vizdoom_fate_regression_map_v2
+  env.vizdoom.length: 900
+  env.vizdoom.repeat: 2
+  env.vizdoom.action_set: doom_basic
+  env.vizdoom.scenarios: vizdoom_custom
+  env.vizdoom.route_mode: fixed
+  env.vizdoom.progress_reward: False
+  run: {steps: 1e6, envs: 32, train_ratio: 32}
+  replay.size: 2e6
+
+vizdoom_regression_v2_fault:
+  <<: *size1m
+  task: vizdoom_fate_regression_map_v2
+  env.vizdoom.length: 900
+  env.vizdoom.repeat: 4
+  env.vizdoom.action_set: doom_basic
+  env.vizdoom.scenarios: vizdoom_custom
+  env.vizdoom.fault_profile: doomreg_train
+  env.vizdoom.episode_prob: 0.5
+  env.vizdoom.severity: 1.0
+  env.vizdoom.cooldown: 16
+  run: {steps: 3e5, envs: 8, train_ratio: 128}
+  replay.size: 1e5
+
+vizdoom_regression_v2_holdout_fault:
+  <<: *size1m
+  task: vizdoom_fate_regression_map_v2
+  env.vizdoom.length: 900
+  env.vizdoom.repeat: 4
+  env.vizdoom.action_set: doom_basic
+  env.vizdoom.scenarios: vizdoom_custom
+  env.vizdoom.fault_profile: doomreg_holdout
+  env.vizdoom.episode_prob: 0.5
+  env.vizdoom.severity: 1.0
+  env.vizdoom.cooldown: 16
+  run: {steps: 3e5, envs: 8, train_ratio: 128}
+  replay.size: 1e5
+
+vizdoom_regression_v2_sparse_fault:
+  <<: *size1m
+  task: vizdoom_fate_regression_map_v2
+  env.vizdoom.length: 900
+  env.vizdoom.repeat: 4
+  env.vizdoom.action_set: doom_basic
+  env.vizdoom.scenarios: vizdoom_custom
+  env.vizdoom.fault_profile: doomreg_sparse
+  env.vizdoom.episode_prob: 0.05
+  env.vizdoom.severity: 0.35
+  env.vizdoom.cooldown: 32
+  run: {steps: 3e5, envs: 8, train_ratio: 128}
+  replay.size: 1e5
+
+vizdoom_doomlab:
+  <<: *size1m
+  task: vizdoom_fate_doomlab_map_v1
+  env.vizdoom.length: 1800
+  env.vizdoom.repeat: 4
+  env.vizdoom.action_set: doom_basic
+  env.vizdoom.scenarios: vizdoom_custom
+  run: {steps: 5e5, envs: 8, train_ratio: 128}
+  replay.size: 1e5
+
+vizdoom_doomlab_fault:
+  <<: *size1m
+  task: vizdoom_fate_doomlab_map_v1
+  env.vizdoom.length: 1800
+  env.vizdoom.repeat: 4
+  env.vizdoom.action_set: doom_basic
+  env.vizdoom.scenarios: vizdoom_custom
+  env.vizdoom.fault_profile: doomreg_train
+  env.vizdoom.episode_prob: 0.5
+  env.vizdoom.severity: 1.0
+  env.vizdoom.cooldown: 16
+  run: {steps: 3e5, envs: 8, train_ratio: 128}
+  replay.size: 1e5
+
+vizdoom_doomlab_holdout_fault:
+  <<: *size1m
+  task: vizdoom_fate_doomlab_map_v1
+  env.vizdoom.length: 1800
+  env.vizdoom.repeat: 4
+  env.vizdoom.action_set: doom_basic
+  env.vizdoom.scenarios: vizdoom_custom
+  env.vizdoom.fault_profile: doomreg_holdout
+  env.vizdoom.episode_prob: 0.5
+  env.vizdoom.severity: 1.0
+  env.vizdoom.cooldown: 16
+  run: {steps: 3e5, envs: 8, train_ratio: 128}
+  replay.size: 1e5
+
+vizdoom_doomlab_sparse_fault:
+  <<: *size1m
+  task: vizdoom_fate_doomlab_map_v1
+  env.vizdoom.length: 1800
+  env.vizdoom.repeat: 4
+  env.vizdoom.action_set: doom_basic
+  env.vizdoom.scenarios: vizdoom_custom
+  env.vizdoom.fault_profile: doomreg_sparse
+  env.vizdoom.episode_prob: 0.05
+  env.vizdoom.severity: 0.35
+  env.vizdoom.cooldown: 32
+  run: {steps: 3e5, envs: 8, train_ratio: 128}
+  replay.size: 1e5
+
+vizdoom_fault:
+  <<: *size1m
+  task: vizdoom_basic
+  env.vizdoom.fault_profile: benchmark_train
+  env.vizdoom.episode_prob: 0.25
+  env.vizdoom.severity: 0.25
+  run: {steps: 3e5, envs: 8, train_ratio: 128}
+  replay.size: 1e5
+
+dmc_proprio:
+  <<: *size1m
+  task: dmc_walker_walk
+  env.dmc.image: False
+  run: {steps: 1.1e6, train_ratio: 1024}
+
+dmc_vision:
+  task: dmc_walker_walk
+  env.dmc.proprio: False
+  run: {steps: 1.1e6, train_ratio: 256}
+
+bsuite:
+  task: bsuite_mnist/0
+  run: {envs: 1, save_every: -1, train_ratio: 1024}
+
+loconav:
+  task: loconav_ant_maze_m
+  env.loconav.repeat: 1
+  run.train_ratio: 256
+
+multicpu:
+  batch_size: 12
+  jax.mock_devices: 8
+  jax.policy_devices: [0, 1]
+  jax.train_devices: [2, 3, 4, 5, 6, 7]
+
+debug:
+  batch_size: 8
+  batch_length: 10
+  report_length: 5
+  jax: {platform: cpu, debug: True, prealloc: False}
+  run: {envs: 4, report_every: 10, log_every: 5, save_every: 15, train_ratio: 8, debug: True}
+  replay.size: 1e4
+  agent:
+    .*\.bins: 5
+    .*\.layers: 1
+    .*\.units: 8
+    .*\.stoch: 2
+    .*\.classes: 4
+    .*\.deter: 8
+    .*\.hidden: 3
+    .*\.blocks: 4
+    .*\.depth: 2

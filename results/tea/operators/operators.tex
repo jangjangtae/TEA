@@ -1,0 +1,45 @@
+% Requires booktabs, tabularx, array; insert inside the existing document.
+% Trigger conditions below are conditional on episode assignment, cooldown, and activation draw.
+% Full machine-readable subtype names and implementation caveats are in operators.csv.
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\textwidth}{@{}r p{0.19\textwidth} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+ID & Operator & Eligibility condition & Mutation \\
+\midrule
+2 & Recent-success action remap & A prior raw engine reward \(>\) 0.01 occurred within 20 episode steps, and the current requested action differs from the previous requested action. & Execute \_ACTION\_REMAP.get(requested\_action, 0) instead of the requested action. \\
+3 & Recent-success action delay & A prior raw engine reward \(>\) 0.01 occurred within 20 episode steps, and the current requested action differs from the previous requested action. & Store the requested action; execute NOOP now. On the next non-reset call, execute the pending action instead of that call's requested action. \\
+4 & Sticky action after repeats & At least three prior requested actions exist; the last three are identical; the current requested action differs from the most recent requested action. & Execute the previous executed environment action instead of the current requested action. \\
+7 & Positive-reward delay & Current raw engine reward \(>\) 0.01. & Store the current raw reward; deliver only any previously pending reward now. Pending reward is normally added on the next non-reset call. \\
+8 & Positive-reward halving & Current raw engine reward \(>\) 0.01. & Deliver 0.5 times the current raw reward plus any previously pending reward. \\
+20 & Collected-resource rollback & Requested action is DO (5), and at least one field in wood, sapling, stone, coal, iron, diamond increased in the base transition. & Restore the first increased field in that fixed field order to its pre-transition value; other state fields and delivered reward are not rolled back by this operator. \\
+23 & Crafted-output rollback & Requested action is a crafting action (11-16), and its corresponding output item count increased. & Restore that crafted output item count to its pre-transition value. Other inventory changes, including consumed ingredients, remain. \\
+27 & Placed-station rollback & Requested action is PLACE\_TABLE (8) or PLACE\_FURNACE (9); the front tile changed from a different value to the corresponding station tile. & Restore the front map tile to its pre-transition value. Other state changes, including consumed inventory, remain. \\
+\bottomrule
+\end{tabularx}
+\caption{Train and Seen manually seeded operators. IDs are persistent wrapper subtype identifiers. Eligibility and operator application do not by themselves establish a verified game failure.}
+\label{tab:tea-operators-train-seen}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\textwidth}{@{}r p{0.19\textwidth} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+ID & Operator & Eligibility condition & Mutation \\
+\midrule
+11 & Action remap after repeats & At least three prior requested actions exist; the last three are identical; the current requested action differs from the most recent requested action. & Execute \_ACTION\_REMAP.get(requested\_action, 0) instead of the requested action. \\
+14 & Positive-reward omission & Current raw engine reward \(>\) 0.01 and the last three prior requested actions are identical. & Omit the current reward; deliver only any previously pending reward. \\
+15 & Reward delay after recent rewards & Current raw engine reward \(>\) 0.01 and at least two of the last eight raw engine rewards are \(>\) 0.01. & Store the current raw reward; deliver only any previously pending reward now. \\
+18 & Position-history action delay & Current pre-transition position is in the deque of the last 32 recorded post-transition positions, and the current requested action differs from the previous requested action. & Store the requested action; execute NOOP now, and execute the pending action on the next non-reset call. \\
+19 & Recent-success repeat-switch delay & A prior raw engine reward \(>\) 0.01 occurred within 20 episode steps; the last three requested actions are identical; the current requested action switches. & Store the requested action; execute NOOP now, and execute the pending action on the next non-reset call. \\
+31 & New-achievement rollback & At least one achievement changed from false to true in the base transition. & Restore the first newly unlocked achievement in ascending index order to its previous value; inventory and delivered reward are not rolled back by this operator. \\
+34 & Craft-transition inventory decrement & Requested action is a crafting action (11-16), and any inventory field changed in the base transition. & Select the first changed field in inventory dataclass order and replace its post-transition value v with max(v-1, 0). \\
+\bottomrule
+\end{tabularx}
+\caption{Holdout and Sparse manually seeded operators. IDs are persistent wrapper subtype identifiers. Eligibility and operator application do not by themselves establish a verified game failure.}
+\label{tab:tea-operators-holdout-sparse}
+\end{table*}

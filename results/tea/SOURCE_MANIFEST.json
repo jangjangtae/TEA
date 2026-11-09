@@ -1,0 +1,1458 @@
+{
+  "description": "Derived evaluation tables and runtime copied from completed TEA studies. Local paths are replaced with artifacts/ or ./; numeric CSV values are unchanged.",
+  "runtime_snapshot": "tea_no_first_bonus_20261027_5seed_v1",
+  "cohorts": {
+    "core": {
+      "evaluations": 525,
+      "clean_repeats": 1,
+      "holdout_sparse_repeats": 3
+    },
+    "replay": {
+      "evaluations": 270,
+      "all_repeats": 3
+    },
+    "first_transition": {
+      "evaluations": 135,
+      "all_repeats": 3
+    }
+  },
+  "files": [
+    {
+      "target": "dreamerv3/__init__.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/dreamerv3/__init__.py",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/agent.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/dreamerv3/agent.py",
+      "source_sha256": "93662bb5867d157159f617823c018f4ca9acd12c81d72e679d85089721a6a1e5",
+      "public_sha256": "93662bb5867d157159f617823c018f4ca9acd12c81d72e679d85089721a6a1e5",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/rssm.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/dreamerv3/rssm.py",
+      "source_sha256": "3235a19c2af5140dacb84a319ef7a24edd416cdd4a8ddcd84bc3db37aaa1763b",
+      "public_sha256": "3235a19c2af5140dacb84a319ef7a24edd416cdd4a8ddcd84bc3db37aaa1763b",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/main.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/dreamerv3/main.py",
+      "source_sha256": "5d4e0060335223c1f213b9a2f90a13b9df26522892601d7b4f380bcabae4d3a2",
+      "public_sha256": "5d4e0060335223c1f213b9a2f90a13b9df26522892601d7b4f380bcabae4d3a2",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/configs.yaml",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/dreamerv3/configs.yaml",
+      "source_sha256": "de21861aa9740d2716efe607792fdf5442c8affc50d46e5b8bf3a45d0e8fef00",
+      "public_sha256": "de21861aa9740d2716efe607792fdf5442c8affc50d46e5b8bf3a45d0e8fef00",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/fault_score.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/dreamerv3/fault_score.py",
+      "source_sha256": "40c30471c1a85878c53882bb11864e62debff022bba5990c161965cadfa18844",
+      "public_sha256": "40c30471c1a85878c53882bb11864e62debff022bba5990c161965cadfa18844",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/calibrate_fault_score.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/dreamerv3/calibrate_fault_score.py",
+      "source_sha256": "0e912159636b4757c1bccf05a7edd6d75fadc9f60f248fd1cb1b4fe6752d25b9",
+      "public_sha256": "0e912159636b4757c1bccf05a7edd6d75fadc9f60f248fd1cb1b4fe6752d25b9",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/tea_no_first_bonus.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/dreamerv3/tea_no_first_bonus.py",
+      "source_sha256": "b937b3d2364404e1d210c3abebe1c1b9b2558a66f619929ddfb0b3004cd73a2a",
+      "public_sha256": "b937b3d2364404e1d210c3abebe1c1b9b2558a66f619929ddfb0b3004cd73a2a",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/fate_replay_restore.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/dreamerv3/fate_replay_restore.py",
+      "source_sha256": "d8c250e457770b565ad2a170496f0d868ace5fb1991f4f423a58eb58382e5e50",
+      "public_sha256": "d8c250e457770b565ad2a170496f0d868ace5fb1991f4f423a58eb58382e5e50",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/fate_action_diagnostics.py",
+      "origin": "./dreamerv3/fate_action_diagnostics.py",
+      "source_sha256": "f2af9b5b7b0a1c77cf32b2ca15bd6414197d402d46ffb0d2f02fbca0e33281fa",
+      "public_sha256": "f2af9b5b7b0a1c77cf32b2ca15bd6414197d402d46ffb0d2f02fbca0e33281fa",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/fate_reference_audit.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/dreamerv3/fate_reference_audit.py",
+      "source_sha256": "c52d48d224d7c8d647cbb6e10acd640254dbd5d119e8e423185f41d1d03a8929",
+      "public_sha256": "c52d48d224d7c8d647cbb6e10acd640254dbd5d119e8e423185f41d1d03a8929",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/test_fault_reward_modes.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/dreamerv3/test_fault_reward_modes.py",
+      "source_sha256": "97800e022237238b45a21d239b0b7142bb82034c47ecd176f28601c371ac570a",
+      "public_sha256": "97800e022237238b45a21d239b0b7142bb82034c47ecd176f28601c371ac570a",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/test_craftax_faults.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/dreamerv3/test_craftax_faults.py",
+      "source_sha256": "40539e348484077df2a698b3cd793d53f76a99632752883c2c46cb33321f4d85",
+      "public_sha256": "40539e348484077df2a698b3cd793d53f76a99632752883c2c46cb33321f4d85",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/test_fate_operator_contract.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/dreamerv3/test_fate_operator_contract.py",
+      "source_sha256": "0c7fde9f51808339598c895ea0da62dc878f8ce03d274e820ca2c2121c634468",
+      "public_sha256": "0c7fde9f51808339598c895ea0da62dc878f8ce03d274e820ca2c2121c634468",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/core/__init__.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/core/__init__.py",
+      "source_sha256": "a088d8ef0017eb7c1e046bb1e3021d59382086607a94e42746d30e79c6dfc681",
+      "public_sha256": "a088d8ef0017eb7c1e046bb1e3021d59382086607a94e42746d30e79c6dfc681",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/core/base.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/core/base.py",
+      "source_sha256": "64a51beda8e7e0b211cb857843ab434e3a47269eee7771674ed8630954a3ec98",
+      "public_sha256": "64a51beda8e7e0b211cb857843ab434e3a47269eee7771674ed8630954a3ec98",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/core/chunk.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/core/chunk.py",
+      "source_sha256": "586519b969d22d0e9c0bead76396387253bc40cdebda2ea5d9ff3a77402d1c97",
+      "public_sha256": "586519b969d22d0e9c0bead76396387253bc40cdebda2ea5d9ff3a77402d1c97",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/core/clock.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/core/clock.py",
+      "source_sha256": "c3a4accb9f1be9f1d47f1ac8f2802ccb06c3abfdbc1f13db203674b3a0ab8933",
+      "public_sha256": "c3a4accb9f1be9f1d47f1ac8f2802ccb06c3abfdbc1f13db203674b3a0ab8933",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/core/disk_replay.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/core/disk_replay.py",
+      "source_sha256": "1628eaaa64c4b51c5a13f2f0683fdbbd7adbf40c5a87b012eb3c8e73af012d86",
+      "public_sha256": "1628eaaa64c4b51c5a13f2f0683fdbbd7adbf40c5a87b012eb3c8e73af012d86",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/core/driver.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/core/driver.py",
+      "source_sha256": "f8397df5e3fccfb3d6079b224dfe4b15281587a8754061af0d644bf4ded4157c",
+      "public_sha256": "f8397df5e3fccfb3d6079b224dfe4b15281587a8754061af0d644bf4ded4157c",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/core/limiters.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/core/limiters.py",
+      "source_sha256": "370d2fa708c80fbf86ddf2bc2456fea8d4d018c8e21eec2b8e71af6dbe163921",
+      "public_sha256": "370d2fa708c80fbf86ddf2bc2456fea8d4d018c8e21eec2b8e71af6dbe163921",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/core/random.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/core/random.py",
+      "source_sha256": "38b51d892deb965c7d0ccd1df1b2905f29613245e00737fa368fc43927ad6b8d",
+      "public_sha256": "38b51d892deb965c7d0ccd1df1b2905f29613245e00737fa368fc43927ad6b8d",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/core/replay.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/core/replay.py",
+      "source_sha256": "c3210b6cc1fde710145129ac6c9952f70bf8c6a96605004382129301a67728e5",
+      "public_sha256": "c3210b6cc1fde710145129ac6c9952f70bf8c6a96605004382129301a67728e5",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/core/selectors.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/core/selectors.py",
+      "source_sha256": "b8cb69021e8f79888df88fb5c195e8ff19e3d54065bb08bd3586fd9cbe6655d3",
+      "public_sha256": "b8cb69021e8f79888df88fb5c195e8ff19e3d54065bb08bd3586fd9cbe6655d3",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/core/streams.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/core/streams.py",
+      "source_sha256": "8c75583d15be013a22058721f8f055c9c7ccaca95360d6ed100f60dc29ee19e5",
+      "public_sha256": "8c75583d15be013a22058721f8f055c9c7ccaca95360d6ed100f60dc29ee19e5",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/core/wrappers.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/core/wrappers.py",
+      "source_sha256": "f6f5beab87109bc97c0bd3318bea637e8f91d43db5005075f61ab1c0be3a73e7",
+      "public_sha256": "f6f5beab87109bc97c0bd3318bea637e8f91d43db5005075f61ab1c0be3a73e7",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/jax/__init__.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/jax/__init__.py",
+      "source_sha256": "7c55603a54144d3ea03799475056407c1596cf16d041caa24ba5a45a63444e06",
+      "public_sha256": "7c55603a54144d3ea03799475056407c1596cf16d041caa24ba5a45a63444e06",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/jax/agent.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/jax/agent.py",
+      "source_sha256": "6958b896e5621d42d481f6821d7293798db557e08486db4ba4d3804d539b7f10",
+      "public_sha256": "6958b896e5621d42d481f6821d7293798db557e08486db4ba4d3804d539b7f10",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/jax/heads.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/jax/heads.py",
+      "source_sha256": "437641cde21e7f9e3f69b88ad8f6b7e7c22e54eec8c5b19eef6127afde1a9b3f",
+      "public_sha256": "437641cde21e7f9e3f69b88ad8f6b7e7c22e54eec8c5b19eef6127afde1a9b3f",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/jax/internal.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/jax/internal.py",
+      "source_sha256": "d4b9f0d8287b1bc531bc26ef401bf9cdca4d6a9773af77ac0a8c3086e35f0f33",
+      "public_sha256": "d4b9f0d8287b1bc531bc26ef401bf9cdca4d6a9773af77ac0a8c3086e35f0f33",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/jax/nets.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/jax/nets.py",
+      "source_sha256": "9a1c0c71ad7d3596572a44416e78434f777d8f4dbcbe8ca0dd6b86bb8246392c",
+      "public_sha256": "9a1c0c71ad7d3596572a44416e78434f777d8f4dbcbe8ca0dd6b86bb8246392c",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/jax/opt.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/jax/opt.py",
+      "source_sha256": "4b9c9aedc87a5f473a6a0c1f9d6c61118c20c304178a28a1f6b4221edbd2df1f",
+      "public_sha256": "4b9c9aedc87a5f473a6a0c1f9d6c61118c20c304178a28a1f6b4221edbd2df1f",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/jax/outs.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/jax/outs.py",
+      "source_sha256": "7e80691f175c71be614f089023cce3a809e0d026c6d5ce89bf566d5f11eb3ed0",
+      "public_sha256": "7e80691f175c71be614f089023cce3a809e0d026c6d5ce89bf566d5f11eb3ed0",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/jax/transform.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/jax/transform.py",
+      "source_sha256": "14478bbad355a77bb5657d4c7197b3a76878fb243bace7c36afa44a780afa267",
+      "public_sha256": "14478bbad355a77bb5657d4c7197b3a76878fb243bace7c36afa44a780afa267",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/jax/utils.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/jax/utils.py",
+      "source_sha256": "76cd112313a19dc8524721dc7b1be86b89799b11c9865cce5e11de2a67bb1461",
+      "public_sha256": "76cd112313a19dc8524721dc7b1be86b89799b11c9865cce5e11de2a67bb1461",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/run/__init__.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/run/__init__.py",
+      "source_sha256": "8024059ae7d6e8741fd72a781c613ba1220ce80b2cc78dad8ee2523b0d7782aa",
+      "public_sha256": "8024059ae7d6e8741fd72a781c613ba1220ce80b2cc78dad8ee2523b0d7782aa",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/run/eval_only.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/run/eval_only.py",
+      "source_sha256": "7ead721186a1f03eef3b234eadd17425240bc653809d20f1d57a7170ab4106b8",
+      "public_sha256": "7ead721186a1f03eef3b234eadd17425240bc653809d20f1d57a7170ab4106b8",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/run/parallel.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/run/parallel.py",
+      "source_sha256": "1b44b0cffe5f8834beddf9a05f5bb614ee8cec487846b5634c769eb88e7f0b5e",
+      "public_sha256": "1b44b0cffe5f8834beddf9a05f5bb614ee8cec487846b5634c769eb88e7f0b5e",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/run/tester_eval.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/run/tester_eval.py",
+      "source_sha256": "a3aa50bbe4247aa1f23675cbfa2f97f8b58e012aad4f226338330b51521224d8",
+      "public_sha256": "a3aa50bbe4247aa1f23675cbfa2f97f8b58e012aad4f226338330b51521224d8",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/run/tester_train.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/run/tester_train.py",
+      "source_sha256": "45f98c82124de0a59f984ecb679b60bceee971a0fb2258fdc3d55d834998a93d",
+      "public_sha256": "45f98c82124de0a59f984ecb679b60bceee971a0fb2258fdc3d55d834998a93d",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/run/train.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/run/train.py",
+      "source_sha256": "65ba1e5aa93c75d39e9e3e8a3dc725afef74b2ed069a91703a3f907b565f6069",
+      "public_sha256": "65ba1e5aa93c75d39e9e3e8a3dc725afef74b2ed069a91703a3f907b565f6069",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/run/train_eval.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/run/train_eval.py",
+      "source_sha256": "7074028795ce6735daacd942b3a1295e343b9296a74b99d659eb68ad690dc934",
+      "public_sha256": "7074028795ce6735daacd942b3a1295e343b9296a74b99d659eb68ad690dc934",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/__init__.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/__init__.py",
+      "source_sha256": "de1322d37227254ce32ce2358f5c0d034fdc18fc8d6d0c7e9b62757ef22e7dfb",
+      "public_sha256": "de1322d37227254ce32ce2358f5c0d034fdc18fc8d6d0c7e9b62757ef22e7dfb",
+      "sanitized_paths": true
+    },
+    {
+      "target": "embodied/envs/craftax.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/embodied/envs/craftax.py",
+      "source_sha256": "02b898efc1b8cbe87e23b1cf1d87a62df689e0c13f39c6c8eba943b8e6ff42a7",
+      "public_sha256": "02b898efc1b8cbe87e23b1cf1d87a62df689e0c13f39c6c8eba943b8e6ff42a7",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/analyze_fate_behavior_diversity.py",
+      "origin": "./dreamerv3/analyze_fate_behavior_diversity.py",
+      "source_sha256": "f04448d39507a6b15914b8a79e9a67bc6494725a0359554488d5a37c0c970c31",
+      "public_sha256": "f04448d39507a6b15914b8a79e9a67bc6494725a0359554488d5a37c0c970c31",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/analyze_craftax_multiseed.py",
+      "origin": "./dreamerv3/analyze_craftax_multiseed.py",
+      "source_sha256": "d75c7bfee5c8b2cedd5a4eba78e43640c3994b4c0b0a6bd9ab29c534bf857237",
+      "public_sha256": "d75c7bfee5c8b2cedd5a4eba78e43640c3994b4c0b0a6bd9ab29c534bf857237",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/analyze_craftax_milestones.py",
+      "origin": "./dreamerv3/analyze_craftax_milestones.py",
+      "source_sha256": "d4054b8924913f97b72cde7ab18ca4f40727c62e221524433a950b8598a9d5d7",
+      "public_sha256": "d4054b8924913f97b72cde7ab18ca4f40727c62e221524433a950b8598a9d5d7",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/plot_tea_final_paper.py",
+      "origin": "./dreamerv3/plot_tea_final_paper.py",
+      "source_sha256": "374a386093f96c89ae15c5476fd362f9976dbe8bb32dc5177d47ad0c91af8d77",
+      "public_sha256": "fe52d73f9abb34e334912f1428c98b37fa7765b486581e5f552688ab047e1f1b",
+      "sanitized_paths": true,
+      "release_adjustment": "Portable input paths or documentation notice; numerical results and reward rules unchanged."
+    },
+    {
+      "target": "dreamerv3/plot_fate_tog_figures.py",
+      "origin": "./dreamerv3/plot_fate_tog_figures.py",
+      "source_sha256": "c3c55e93c117789505980f330861667b08769875654b439a1fff6cdc5d990c52",
+      "public_sha256": "c3c55e93c117789505980f330861667b08769875654b439a1fff6cdc5d990c52",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/plot_fate_completed_results.py",
+      "origin": "./dreamerv3/plot_fate_completed_results.py",
+      "source_sha256": "a0ba668243daa12e60fc9aa21737d2e7be76ca4f84a2b60b6ec7d303824bc824",
+      "public_sha256": "a0ba668243daa12e60fc9aa21737d2e7be76ca4f84a2b60b6ec7d303824bc824",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/plot_fate_manuscript_materials.py",
+      "origin": "./dreamerv3/plot_fate_manuscript_materials.py",
+      "source_sha256": "ad808038c19eff4cbc41c3885ac38b7c41c73ef417cae37a86af8560479ba8ad",
+      "public_sha256": "ad808038c19eff4cbc41c3885ac38b7c41c73ef417cae37a86af8560479ba8ad",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/plot_fate_professor_discussion.py",
+      "origin": "./dreamerv3/plot_fate_professor_discussion.py",
+      "source_sha256": "dcea7fd7295b111abd4bbd8a34ae1b235aa4e91fabb6e51cd76cba421b315bbc",
+      "public_sha256": "dcea7fd7295b111abd4bbd8a34ae1b235aa4e91fabb6e51cd76cba421b315bbc",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/test_plot_tea_final_paper.py",
+      "origin": "./dreamerv3/test_plot_tea_final_paper.py",
+      "source_sha256": "0c4300d997b76715a95ce90a5cebf466a8715098168ff7bbcc28b5693ab31643",
+      "public_sha256": "0c4300d997b76715a95ce90a5cebf466a8715098168ff7bbcc28b5693ab31643",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/test_plot_fate_tog_figures.py",
+      "origin": "./dreamerv3/test_plot_fate_tog_figures.py",
+      "source_sha256": "879daf3b22a56967329be52d9519e4ef9f99fd4be9db038dd7af44f8e70fbb46",
+      "public_sha256": "879daf3b22a56967329be52d9519e4ef9f99fd4be9db038dd7af44f8e70fbb46",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/wuji_craftax.py",
+      "origin": "./dreamerv3/wuji_craftax.py",
+      "source_sha256": "514336794e547256244637ace3e6776423fb474c8a4764de9dd766ea47837602",
+      "public_sha256": "514336794e547256244637ace3e6776423fb474c8a4764de9dd766ea47837602",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/wuji_a2c_craftax.py",
+      "origin": "./dreamerv3/wuji_a2c_craftax.py",
+      "source_sha256": "3f88c6a2e160130cb580d8e716e98760eca7e1097bffbd313b6766a0888f14ed",
+      "public_sha256": "3f88c6a2e160130cb580d8e716e98760eca7e1097bffbd313b6766a0888f14ed",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/audit_fate_revision_run.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/dreamerv3/audit_fate_revision_run.py",
+      "source_sha256": "d449fcce902d35e75afc7c87ae884d7b736785c3225974d1e1e8b5df5483dfb1",
+      "public_sha256": "d449fcce902d35e75afc7c87ae884d7b736785c3225974d1e1e8b5df5483dfb1",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/analyze_fate_corrected_completed.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/dreamerv3/analyze_fate_corrected_completed.py",
+      "source_sha256": "b4bc632c438502b414f5b9749742244034b3ddc6eb23eafab0df703e461f9872",
+      "public_sha256": "b4bc632c438502b414f5b9749742244034b3ddc6eb23eafab0df703e461f9872",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/test_fate_diagnostic_followup.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/dreamerv3/test_fate_diagnostic_followup.py",
+      "source_sha256": "ee994437290034e716c888ff1a5ff71a385c786242afbf9dd0b92308f63f505b",
+      "public_sha256": "ee994437290034e716c888ff1a5ff71a385c786242afbf9dd0b92308f63f505b",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/test_fate_revision_queue.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/dreamerv3/test_fate_revision_queue.py",
+      "source_sha256": "bc07d31a1b2a44633c76a0d9cb8956b393e657006fb25fb0e350a797ca904666",
+      "public_sha256": "bc07d31a1b2a44633c76a0d9cb8956b393e657006fb25fb0e350a797ca904666",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/fate_diagnostic_followup.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/dreamerv3/fate_diagnostic_followup.py",
+      "source_sha256": "7d796980ca6eeeb29383173f8a9e745a7b460a58c3696f2d40a2332d95af96c1",
+      "public_sha256": "7d796980ca6eeeb29383173f8a9e745a7b460a58c3696f2d40a2332d95af96c1",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/fate_replication_queue.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/dreamerv3/fate_replication_queue.py",
+      "source_sha256": "e24781da8686d81bde69529b0f668f87829b27ebc7d533f00b92d49ef5b03911",
+      "public_sha256": "c6022cc98250b7fcd1999c61246b73484ae990e702cbd4d6d9f7649544aabb01",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/fate_clean_novelty.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/dreamerv3/fate_clean_novelty.py",
+      "source_sha256": "2fe63a09fc887b10cb5b2ded94dd06e280f2861a7e6f0d4cba9e14d6f686f0a8",
+      "public_sha256": "2fe63a09fc887b10cb5b2ded94dd06e280f2861a7e6f0d4cba9e14d6f686f0a8",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/audit_fate_revision_job.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/dreamerv3/audit_fate_revision_job.py",
+      "source_sha256": "96b4fba2f5f26dce65573a1236aae572e44c3f31e5d5697565df24f44f924d55",
+      "public_sha256": "96b4fba2f5f26dce65573a1236aae572e44c3f31e5d5697565df24f44f924d55",
+      "sanitized_paths": true
+    },
+    {
+      "target": "dreamerv3/calibrate_intrinsic_reward_scales.py",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/source/dreamerv3/calibrate_intrinsic_reward_scales.py",
+      "source_sha256": "0b32d66ca1d583798eecd9c22f2b203f8aa3ffb5a8dd05d05a06d541ede75fbd",
+      "public_sha256": "0b32d66ca1d583798eecd9c22f2b203f8aa3ffb5a8dd05d05a06d541ede75fbd",
+      "sanitized_paths": true
+    },
+    {
+      "target": "results/tea/core/summary.csv",
+      "origin": "artifacts/tea_final_results_20261023/summary.csv",
+      "source_sha256": "6468316435ce7569d1f020e978dc8b63f28b4ec5e72047e00999ae84111891db",
+      "public_sha256": "1055d24e1d4d8d3adabcd408106edd70fe52104f9490830b57975bf48dc6d053",
+      "sanitized_paths": true
+    },
+    {
+      "target": "results/tea/core/per_policy.csv",
+      "origin": "artifacts/tea_final_results_20261023/per_policy.csv",
+      "source_sha256": "11e7e4ab66ed65584d1dc5da572fa020246198c2ba4739b8dd7551b838df7c0d",
+      "public_sha256": "729cb5f4d3ac791be59660dce08bb15811edd41249b22d55beb4835ff1bcaa61",
+      "sanitized_paths": true
+    },
+    {
+      "target": "results/tea/core/evaluations.csv",
+      "origin": "artifacts/tea_final_results_20261023/evaluations.csv",
+      "source_sha256": "56f064c85306378d916095f5bb804a08284e9ae5635d79a576e6a0c4696092c6",
+      "public_sha256": "130a037ab3d306093f17d0adc9260bd352a272011017612d6c36c40d8ab847eb",
+      "sanitized_paths": true
+    },
+    {
+      "target": "results/tea/core/behavior_per_seed.csv",
+      "origin": "artifacts/tea_final_results_20261023/behavior_per_seed.csv",
+      "source_sha256": "64fa64f727d90920efce90b151e12ea280b34475db3005093d33ce64e894bef0",
+      "public_sha256": "24d0d7d1259a636d8d5cf5b04121ffda08f7cda2ea059baf08953c32ba679f79",
+      "sanitized_paths": true
+    },
+    {
+      "target": "results/tea/core/reward_per_seed.csv",
+      "origin": "artifacts/tea_final_results_20261023/reward_per_seed.csv",
+      "source_sha256": "a23d934585b7b7dd7bd5b74fc028dbbd70cefd54254a703605051e04fa243207",
+      "public_sha256": "0518d321fbbb80f441beecc940b8a8daa755585da0ac6d5d049958c9798e60ea",
+      "sanitized_paths": true
+    },
+    {
+      "target": "results/tea/core/paired_contrasts.csv",
+      "origin": "artifacts/tea_final_results_20261023/paired_contrasts.csv",
+      "source_sha256": "10f73b2f766bced58b5f21cbd54ad67c17999a6763edfd46aadee5e82d20f7a6",
+      "public_sha256": "50e205d292e45d33d97a1c789d453dcf916dee3bf0be08fcedd9b656161028d6",
+      "sanitized_paths": true
+    },
+    {
+      "target": "results/tea/core/opportunity_summary.csv",
+      "origin": "artifacts/tea_final_results_20261023/opportunity_summary.csv",
+      "source_sha256": "667f42942b149496bf6f2ed51d2c3dd58dd32920b7c6d654d6313b5208448417",
+      "public_sha256": "b18afd70077c580104523686805e34a98eb39a8f7c4e64db75f5e70155b7a8f2",
+      "sanitized_paths": true
+    },
+    {
+      "target": "results/tea/core/evaluation_rounds.csv",
+      "origin": "artifacts/tea_final_results_20261023/evaluation_rounds.csv",
+      "source_sha256": "882e0d5ac2cd3cc900a7d934b4f8d85b6485cbeb26c7d576ee924cb94dfa2f44",
+      "public_sha256": "ff24b58ec5d99f31c026e1a0726d0828e8d4f21251c9fb30dac822349e0716fc",
+      "sanitized_paths": true
+    },
+    {
+      "target": "results/tea/replay/results/summary.csv",
+      "origin": "artifacts/tea_replay_results_handoff_20261026/results/summary.csv",
+      "source_sha256": "65fd01922de4f62ace3a4ec6e2432631e42d81efd16571cf4af6954605663d3a",
+      "public_sha256": "f25fcd4885d466255f7efb12b283a4d89ee1016c1004b1a1f5db3e077692049e",
+      "sanitized_paths": true
+    },
+    {
+      "target": "results/tea/replay/results/per_policy.csv",
+      "origin": "artifacts/tea_replay_results_handoff_20261026/results/per_policy.csv",
+      "source_sha256": "46907eed9e915431fa9477cfcaf866da26ab87c0a8626868c987666ddf86ac1f",
+      "public_sha256": "95091f0ae1445c4680673f2ba0af9c95854de28f98c8d01fbb79f59d823b165e",
+      "sanitized_paths": true
+    },
+    {
+      "target": "results/tea/replay/results/evaluations.csv",
+      "origin": "artifacts/tea_replay_results_handoff_20261026/results/evaluations.csv",
+      "source_sha256": "37143bcda4f5dc03cfdcba10f3317deb3bc422f4bca6cc59edacd1dfc894bff2",
+      "public_sha256": "2a6ac97fbe9dfe52ed5deba79c2f186335bf32281935c6b877f0b1952769d85e",
+      "sanitized_paths": true
+    },
+    {
+      "target": "results/tea/replay/results/method_labels.csv",
+      "origin": "artifacts/tea_replay_results_handoff_20261026/results/method_labels.csv",
+      "source_sha256": "8cbd15534c492f705a2eb8334d35d79a7cbbc3f9bbde9f02a3c3bbf1c398d233",
+      "public_sha256": "8232c13bf558d9213029ba168dbbac894b4e1f6faff8d5818352d6cc1a643168",
+      "sanitized_paths": true
+    },
+    {
+      "target": "results/tea/replay/statistics/paired_effects.csv",
+      "origin": "artifacts/tea_replay_results_handoff_20261026/statistics/paired_effects.csv",
+      "source_sha256": "84132e51b8eb6b2d8e5aea1eddb3586a3907924c23d9af41ce8183586d3e0241",
+      "public_sha256": "e658a19115336fd3ea0eb02ba292e80d8fec7417870ccc356b012e0d10f5357f",
+      "sanitized_paths": true
+    },
+    {
+      "target": "results/tea/replay/statistics/paired_seed_differences.csv",
+      "origin": "artifacts/tea_replay_results_handoff_20261026/statistics/paired_seed_differences.csv",
+      "source_sha256": "fef548e2664ac6946efc70cb2be20501020fde3f336aa7feda255949535af6e3",
+      "public_sha256": "5eb547cfc3494c90045ae35917c386be1b273c0aab1e36ced9fabd06d3d9d4e5",
+      "sanitized_paths": true
+    },
+    {
+      "target": "results/tea/replay/scripts/recompute.py",
+      "origin": "artifacts/tea_replay_results_handoff_20261026/scripts/recompute.py",
+      "source_sha256": "b4737c4430801f265ba26898840d16c8aad1dc4c86800cf6849be84469d7f90b",
+      "public_sha256": "b4737c4430801f265ba26898840d16c8aad1dc4c86800cf6849be84469d7f90b",
+      "sanitized_paths": true
+    },
+    {
+      "target": "results/tea/replay/scripts/test_recompute.py",
+      "origin": "artifacts/tea_replay_results_handoff_20261026/scripts/test_recompute.py",
+      "source_sha256": "9d369bd9bfe33bae51682bf23409a1a96a0b236d7ee5ecc1f7b48943a68fb8dd",
+      "public_sha256": "9d369bd9bfe33bae51682bf23409a1a96a0b236d7ee5ecc1f7b48943a68fb8dd",
+      "sanitized_paths": true
+    },
+    {
+      "target": "results/tea/first_transition/results/summary.csv",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/results/summary.csv",
+      "source_sha256": "a2306544c9512f36f2cd8de8dddd9ff419dd9799ff6f6d8b103cc56651e3939d",
+      "public_sha256": "3dfb53ef36f4749af89620c9f74d80389f6fc255cf7d9d4c00b77664954bfa06",
+      "sanitized_paths": true
+    },
+    {
+      "target": "results/tea/first_transition/results/per_policy.csv",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/results/per_policy.csv",
+      "source_sha256": "36cad8603622128fbf35d06d377f490399c1bb3ca543e937ef8179d588fa694b",
+      "public_sha256": "78debb2f7019d31361b45ded7b1a7a85ac7c0fb2dea6c551da4a88c2815f7295",
+      "sanitized_paths": true
+    },
+    {
+      "target": "results/tea/first_transition/results/evaluations.csv",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/results/evaluations.csv",
+      "source_sha256": "4872b46233b9196383a75cdee97aad0f6d1305bafc7cc7103359b8c96186e0d0",
+      "public_sha256": "661d19b7d775113385d6a5ddd4f8e758c922bb722ad9d63b003b9493996afebc",
+      "sanitized_paths": true
+    },
+    {
+      "target": "results/tea/first_transition/results/paired_effects.csv",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/results/paired_effects.csv",
+      "source_sha256": "503d339edf5a63b73c013a79bddd3614668ae7dc216593acb63212144be49187",
+      "public_sha256": "29280ffae249db8dc36965ae0e137cf9646401c8c9a0347da2c16cdf65ecee28",
+      "sanitized_paths": true
+    },
+    {
+      "target": "results/tea/first_transition/results/paired_seed_differences.csv",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/results/paired_seed_differences.csv",
+      "source_sha256": "a6cae3640bc2eace5e8834e06b3911939fb6de4d1ff88ab4d52823f98879cec3",
+      "public_sha256": "2d591f94ac00fbfd0a28b169003c5c7cb31ef7c0211460e3c7c33343de79960b",
+      "sanitized_paths": true
+    },
+    {
+      "target": "results/tea/operators/actions.csv",
+      "origin": "artifacts/tea_operator_handoff_20261109/actions.csv",
+      "source_sha256": "150bdb956e1ca4b13e57952d76796f67812e2de1b03402f92d05a363b3c0f16b",
+      "public_sha256": "6ff74c14cc869403c14be1a3ccb0d1e13a14ccbd05a871ce99c37eecc8bdcecf",
+      "sanitized_paths": true
+    },
+    {
+      "target": "results/tea/operators/operators.csv",
+      "origin": "artifacts/tea_operator_handoff_20261109/operators.csv",
+      "source_sha256": "9cfaf665dfc70dd2f036aa3c92d207803398f61164b2cdc5bbe478bce54cdf0b",
+      "public_sha256": "5afd7874d163c37d0bbb76f7c7aaa391abde92b512a0f57890c0df97fa676c89",
+      "sanitized_paths": true
+    },
+    {
+      "target": "results/tea/operators/fault_profiles.csv",
+      "origin": "artifacts/tea_operator_handoff_20261109/fault_profiles.csv",
+      "source_sha256": "2654e9c7a2b763c3d4f92070355ac47af3c09bbd524c672a66a7966b88c9f3e7",
+      "public_sha256": "7ce26aa02344aaf07fa5a5d09c253fbf501087e0cd1b86d98083e26a050cb6c1",
+      "sanitized_paths": true
+    },
+    {
+      "target": "results/tea/operators/operators.tex",
+      "origin": "artifacts/tea_operator_handoff_20261109/operators.tex",
+      "source_sha256": "6682407431c39480faade437d9557d966bef43bfd8af07dbf42f5f960658b96d",
+      "public_sha256": "e846c4fb1868345d151d581b8188b95addba696152b1fe24f068ee858901314d",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/calibration/seed_0.json",
+      "origin": "artifacts/tea_replay_results_handoff_20261026/calibration/seed_0.json",
+      "source_sha256": "60402c565464f5f35c27ebab3714fcd99633edff1baf1c4f45fc25c09a410d98",
+      "public_sha256": "60402c565464f5f35c27ebab3714fcd99633edff1baf1c4f45fc25c09a410d98",
+      "sanitized_paths": true
+    },
+    {
+      "target": "configs/tea/calibration/seed_1.json",
+      "origin": "artifacts/tea_replay_results_handoff_20261026/calibration/seed_1.json",
+      "source_sha256": "0b53b8a0f9eea93f7b3fe778532e9d7b0663b26f76ddc58a7393db2d5d07d2a7",
+      "public_sha256": "0b53b8a0f9eea93f7b3fe778532e9d7b0663b26f76ddc58a7393db2d5d07d2a7",
+      "sanitized_paths": true
+    },
+    {
+      "target": "configs/tea/calibration/seed_2.json",
+      "origin": "artifacts/tea_replay_results_handoff_20261026/calibration/seed_2.json",
+      "source_sha256": "44710eb4283d8acf16c94ac699dfa1df44e00756124d3547567321c2caa619aa",
+      "public_sha256": "44710eb4283d8acf16c94ac699dfa1df44e00756124d3547567321c2caa619aa",
+      "sanitized_paths": true
+    },
+    {
+      "target": "configs/tea/calibration/seed_3.json",
+      "origin": "artifacts/tea_replay_results_handoff_20261026/calibration/seed_3.json",
+      "source_sha256": "6935fca2c81a00dfafb19e637c75cf52cdb9a62b17fac32273049b6f1a0872a9",
+      "public_sha256": "6935fca2c81a00dfafb19e637c75cf52cdb9a62b17fac32273049b6f1a0872a9",
+      "sanitized_paths": true
+    },
+    {
+      "target": "configs/tea/calibration/seed_4.json",
+      "origin": "artifacts/tea_replay_results_handoff_20261026/calibration/seed_4.json",
+      "source_sha256": "e1bbfebb34877a92d03e33e3db1cea5181391247f496367e9939a9d92e26cf92",
+      "public_sha256": "e1bbfebb34877a92d03e33e3db1cea5181391247f496367e9939a9d92e26cf92",
+      "sanitized_paths": true
+    },
+    {
+      "target": "configs/tea/P0_pretraining.yaml",
+      "origin": "artifacts/fate_clean_corrected_size1m_20260922_v2/train/config.yaml",
+      "source_sha256": "f7a5a5bb48b96a7efdd61f27cd2d89fc3185fb1ea63f57e223a30c85e62712da",
+      "public_sha256": "6383271ff34b9e20a3523dea7965d7a471eb45bd2a3d9799d182653ea8a16284",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptTaskOnly/seed_0_train.yaml",
+      "origin": "artifacts/fate_holiday_corrected_20260922/core/seed_0/train_taskonly/train/config.yaml",
+      "source_sha256": "cee69adf45db22b25bc63dca510af9bb5051f425bff13f07913c2395fcb83121",
+      "public_sha256": "138df1587998d356474f8b32625b0ae81eef3dcaebc351838fe139e6f10b3168",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptFATE/seed_0_train.yaml",
+      "origin": "artifacts/fate_holiday_corrected_20260922/core/seed_0/train_excess_delta_p95_beta02/train/config.yaml",
+      "source_sha256": "b7603e802cd0725a94211586aa63bc9b03b374dc4c30335731945f52f3f28fa4",
+      "public_sha256": "d8d8dbd8585eefd944a4db779d08ba10f4992fee880d3323571d8a19eba572ce",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptDenseSurprise/seed_0_train.yaml",
+      "origin": "artifacts/fate_holiday_corrected_20260922/matched/seed_0/train_dense_matched/train/config.yaml",
+      "source_sha256": "560d1b78d611bb88941c7477ac2892dbc5735132cdd4fc7acc7547b574e89bcf",
+      "public_sha256": "8d6a741bb7a9180e62f13dbe980fe25d225350e43aef1bf6f74650a752e7d05f",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptRND/seed_0_train.yaml",
+      "origin": "artifacts/fate_holiday_corrected_20260922/matched/seed_0/train_rnd_matched/train/config.yaml",
+      "source_sha256": "aceca1fb3a2ff6f2001a0671096cd6a9f718be71850c6c8930a9b30e6bce1476",
+      "public_sha256": "ed6261517d38291f06b1a72baa151525995968564f6b691459553124d46c2245",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptTaskOnly/seed_1_train.yaml",
+      "origin": "artifacts/fate_holiday_corrected_20260922/core/seed_1/train_taskonly/train/config.yaml",
+      "source_sha256": "287906df3f74354f73c274f8f163aa5edfffc817808caf56336666d0f5a227c0",
+      "public_sha256": "b0badd5a48f88f67026f177eb85f3a7e04c1a2ad6218ff158d97c0fa762c5e5d",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptFATE/seed_1_train.yaml",
+      "origin": "artifacts/fate_holiday_corrected_20260922/core/seed_1/train_excess_delta_p95_beta02/train/config.yaml",
+      "source_sha256": "d0aa2f91be0f5078c45e34db6c893be304ab9e0f6a573d3bd0a448744b995fdf",
+      "public_sha256": "a90405a1fb8b142505f413dece8f970de0bc03ab08ecb82baf1d5516d6d87212",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptDenseSurprise/seed_1_train.yaml",
+      "origin": "artifacts/fate_holiday_corrected_20260922/matched/seed_1/train_dense_matched/train/config.yaml",
+      "source_sha256": "22f313aba6aa92e67d48d4b245aabab030e33e332d3641b860a9146efe00cf61",
+      "public_sha256": "068fd73dccef5442bb728c8db2de99d3508277818971b6af25ae06242e9235a1",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptRND/seed_1_train.yaml",
+      "origin": "artifacts/fate_holiday_corrected_20260922/matched/seed_1/train_rnd_matched/train/config.yaml",
+      "source_sha256": "f711791f8d2f8bc2d6639e2e0e481dad7c6df10e54334d20b03837fe9030adb7",
+      "public_sha256": "fc38f3e7c9fd8cafd29543e9c293c84f9c4fc176dc3cce65ce63b577bf70a12a",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptTaskOnly/seed_2_train.yaml",
+      "origin": "artifacts/fate_holiday_corrected_20260922/core/seed_2/train_taskonly/train/config.yaml",
+      "source_sha256": "9d0d568701eb7a6b61058f246b11bad93e80a8a05a8037a61835cee9b37c8593",
+      "public_sha256": "a66fdf4095d3322ea9bdce49b607b2494b155ee1676688ddada399c29a1f7bdd",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptFATE/seed_2_train.yaml",
+      "origin": "artifacts/fate_holiday_corrected_20260922/core/seed_2/train_excess_delta_p95_beta02/train/config.yaml",
+      "source_sha256": "d3c2e367016c669ec9fb3afddbdd21096f5c56a072cf15a2b67c0a46a62c1ee2",
+      "public_sha256": "2951273dbfe53a84ac81222e04f685c7f378c878958df7547e65d763af003061",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptDenseSurprise/seed_2_train.yaml",
+      "origin": "artifacts/fate_holiday_corrected_20260922/matched/seed_2/train_dense_matched/train/config.yaml",
+      "source_sha256": "5e24498eb59f6f9c6638fdb38fdbb370dd2360c4ad0d3743d1743aee9743506e",
+      "public_sha256": "7a0eb5294339e1e2381405406329119523f2f644dd88652b852e797cfa1e3bdc",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptRND/seed_2_train.yaml",
+      "origin": "artifacts/fate_holiday_corrected_20260922/matched/seed_2/train_rnd_matched/train/config.yaml",
+      "source_sha256": "d27c1a8fd47847a02020978adacd284ab6dd61ed5cc0dcabe531650bbb3b930d",
+      "public_sha256": "3e93cba25c9aea80dd49c2ab9912906f9bb416d94866452ef4fc864bee6d3ca0",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptTaskOnly/seed_3_train.yaml",
+      "origin": "artifacts/fate_holiday_corrected_20260922/core/seed_3/train_taskonly/train/config.yaml",
+      "source_sha256": "86761fa4fab045f2f554d6fc9e0478a0c7d9df49e576b9baf5686ccb226b977f",
+      "public_sha256": "897f17369376b9287e61a6b3bee16cc2b315af81505e0a24059fea0f5c65b26a",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptFATE/seed_3_train.yaml",
+      "origin": "artifacts/fate_holiday_corrected_20260922/core/seed_3/train_excess_delta_p95_beta02/train/config.yaml",
+      "source_sha256": "78d6e5db76a666ae6d497fc22d2f020c9b53b082a8cd29d912f6fd7c228fc1d4",
+      "public_sha256": "388c489df2e175e16adfab211c4cbaad99680d595250abbecbb5af5878f52b05",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptDenseSurprise/seed_3_train.yaml",
+      "origin": "artifacts/fate_holiday_corrected_20260922/matched/seed_3/train_dense_matched/train/config.yaml",
+      "source_sha256": "110e6de62aed2b76810a1e6fabe600ba56d741bedc32a073b600d9fe7c1d2b21",
+      "public_sha256": "eea0db0eeb1c3be8491e857c36f6afd6ab501eeb4e3d559cde18e39bc146ab95",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptRND/seed_3_train.yaml",
+      "origin": "artifacts/fate_holiday_corrected_20260922/matched/seed_3/train_rnd_matched/train/config.yaml",
+      "source_sha256": "5b2203bd4e0c0641aa84019b29656bd07f878a5f1614e7ef418263602f95c5ac",
+      "public_sha256": "19f2a0451cc092bce8025ec8cfda2e310e60d10cc07dd84aca889db4780eefc3",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptTaskOnly/seed_4_train.yaml",
+      "origin": "artifacts/fate_holiday_corrected_20260922/core/seed_4/train_taskonly/train/config.yaml",
+      "source_sha256": "d1c8b4ac6c138b710b22775c2bf87a00a3018486c3934040238a9aac72f9c568",
+      "public_sha256": "1cf44e986fa4f651688e3aef3fde99801de70090dba1f6e3f3dd1dbf907d6c12",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptFATE/seed_4_train.yaml",
+      "origin": "artifacts/fate_holiday_corrected_20260922/core/seed_4/train_excess_delta_p95_beta02/train/config.yaml",
+      "source_sha256": "9803ec7ee09ddb60b24da7141d27de17e91408c92ba16d748e363dc3496cb5dc",
+      "public_sha256": "3fa1deeec7dd50880b4426129839cd6bc2f1ee5c7b20eedac3ed3da78ded6420",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptDenseSurprise/seed_4_train.yaml",
+      "origin": "artifacts/fate_holiday_corrected_20260922/matched/seed_4/train_dense_matched/train/config.yaml",
+      "source_sha256": "7ea2834a9e4720834f32237d930cc3f45399c9873b1a15aead193edfc461592c",
+      "public_sha256": "a2f5652f90e37abad7aa68e70f8acdd8d866883e75befdd627f7d74e82067952",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptRND/seed_4_train.yaml",
+      "origin": "artifacts/fate_holiday_corrected_20260922/matched/seed_4/train_rnd_matched/train/config.yaml",
+      "source_sha256": "8aba10dc34aca6b3daa4b92846604b8cbcc319a3a51c7d673aff38283d962b46",
+      "public_sha256": "2c9f4671e841f914e47ef611449b5aa11bad2de5892a57052e080c279f1a6cab",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptTaskOnly/seed_0_train.yaml",
+      "origin": "artifacts/fate_clean_controls_corrected_20260923/controls/seed_0/train_taskonly/train/config.yaml",
+      "source_sha256": "611e030101586a019f87c39f9f9605ca53362a7d750c32470388dd81d70b1cab",
+      "public_sha256": "b44479158b23609373c25bd1a07aa054b6d2f18c1c4e87537d9c84ca4cb97785",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptFATE/seed_0_train.yaml",
+      "origin": "artifacts/fate_clean_controls_corrected_20260923/controls/seed_0/train_excess_delta_p95_beta02/train/config.yaml",
+      "source_sha256": "d6f126a0893082149f75c267da9fb6bc1220460ecda418b5171e7be2b824f63e",
+      "public_sha256": "28d7683a72fcfaf22f3f77f336a5389b9b3eb4b387afa82b39d1f651c8718b76",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptTaskOnly/seed_1_train.yaml",
+      "origin": "artifacts/fate_clean_controls_corrected_20260923/controls/seed_1/train_taskonly/train/config.yaml",
+      "source_sha256": "eccfa4e19ab5aabd8396b6eeea768d2cea0d6e1d78317014dc478be33afd5802",
+      "public_sha256": "d1f72a8e93cb5ca13644220c4e9c7ba8bbd6f6cc15093e930bf3c4b7b90268d5",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptFATE/seed_1_train.yaml",
+      "origin": "artifacts/fate_clean_controls_corrected_20260923/controls/seed_1/train_excess_delta_p95_beta02/train/config.yaml",
+      "source_sha256": "15fcabd6247f0bf052717b1756a3041721c34c4178c08939464ddd141582ae0c",
+      "public_sha256": "48e67b0e51aeac1ed850dc46b3abfec150aac4ce781ed3d8b5dfefb827c17516",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptTaskOnly/seed_2_train.yaml",
+      "origin": "artifacts/fate_clean_controls_corrected_20260923/controls/seed_2/train_taskonly/train/config.yaml",
+      "source_sha256": "28725e4d6d608e1f704a6493bf2dff9d8ffb74ad35f262cb0f05ad1f6287c861",
+      "public_sha256": "323f1d6fc7b61410e19faefc8d76507a9dd2dbd0fab977bf225a74afb4226f8d",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptFATE/seed_2_train.yaml",
+      "origin": "artifacts/fate_clean_controls_corrected_20260923/controls/seed_2/train_excess_delta_p95_beta02/train/config.yaml",
+      "source_sha256": "7b384537e7f391cefc7e77574e0324fa8b8e8f8a04ac1a412db0b2cbbeb31e93",
+      "public_sha256": "be5d9c6e7e96155b6ab1494a6e221a580caea8e2534540dcef62d7bec8310f5a",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptTaskOnly/seed_3_train.yaml",
+      "origin": "artifacts/fate_clean_controls_corrected_20260923/controls/seed_3/train_taskonly/train/config.yaml",
+      "source_sha256": "ae39c4ea20dd1f03c789ecc8c9c1bf6ea0e3f175fdc75dd0fb299db78ab0c34b",
+      "public_sha256": "6b7bde89fd237e0560081602f81c321ef396dfb093c4001032ae7edd31d50819",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptFATE/seed_3_train.yaml",
+      "origin": "artifacts/fate_clean_controls_corrected_20260923/controls/seed_3/train_excess_delta_p95_beta02/train/config.yaml",
+      "source_sha256": "1a6ba828c915418328747982fb89f1e3e5931a58ee5f58a50bd43fe1a12fbf85",
+      "public_sha256": "b173662add354d9e4d9f3c2579bd633a24dc32e601346732ac6f617532a4c4eb",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptTaskOnly/seed_4_train.yaml",
+      "origin": "artifacts/fate_clean_controls_corrected_20260923/controls/seed_4/train_taskonly/train/config.yaml",
+      "source_sha256": "68df5aeb9e22b19487e520df7cb89dbf536d6e0246efb07782ba8629eb966a61",
+      "public_sha256": "255faa1e7a104de55d4256e805e61654a9404aee77f89af6c193ce04f7161ae6",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptFATE/seed_4_train.yaml",
+      "origin": "artifacts/fate_clean_controls_corrected_20260923/controls/seed_4/train_excess_delta_p95_beta02/train/config.yaml",
+      "source_sha256": "3e61f3b9519a8078affff12772104c99f912425bec373447adb910e3fe23177e",
+      "public_sha256": "c79d3e0b5aa5c544e73be2811bbfa4bd6d6963007837a57bd099eb2c6c0d212c",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptDenseSurprise/seed_0_train.yaml",
+      "origin": "artifacts/fate_clean_novelty_20260929_v2/clean_novelty/seed_0/train_dense_matched/train/config.yaml",
+      "source_sha256": "9f669244b17c94bc4604be023eafef3c60efa98829eed79306aadca728f1282e",
+      "public_sha256": "03a8864cd72c4c98166dd7b5cba939126bda64b4e31bfeb7dc49955a0aa7c300",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptDenseSurprise/seed_1_train.yaml",
+      "origin": "artifacts/fate_clean_novelty_20260929_v2/clean_novelty/seed_1/train_dense_matched/train/config.yaml",
+      "source_sha256": "ad1953923bf2a019213f2060f7b77915d8386eafa2ed2b4c4d650c0c217a21af",
+      "public_sha256": "d98b9c6dc30128aba7c5f0f06e1882b0671790e04978af67180560dc76feeb7a",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptDenseSurprise/seed_2_train.yaml",
+      "origin": "artifacts/fate_clean_novelty_20260929_v2/clean_novelty/seed_2/train_dense_matched/train/config.yaml",
+      "source_sha256": "67c648ef07e44f6d708c730c3ce8efd02bbb3ad5e65b77c523d10938840da39e",
+      "public_sha256": "bed9a28fbe314696ab161fd742d1e88a49d64bb2bf9a698db5801990b7a23820",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptDenseSurprise/seed_3_train.yaml",
+      "origin": "artifacts/fate_clean_novelty_20260929_v2/clean_novelty/seed_3/train_dense_matched/train/config.yaml",
+      "source_sha256": "a2bbdcf3b66fc12a05c4437d218ef9a96dbb401c252e515182f2e1310df6bd04",
+      "public_sha256": "747f707288023df7e09fa4037fa82955f71c0f61e7bb3a41f55a8078f2becd3b",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptDenseSurprise/seed_4_train.yaml",
+      "origin": "artifacts/fate_clean_novelty_20260929_v2/clean_novelty/seed_4/train_dense_matched/train/config.yaml",
+      "source_sha256": "ff22cb931b3eded0a7c6e4aed49e97622abb001e4758d88cb920d044ba597f80",
+      "public_sha256": "aceefab04bd2cccc518bc23831beb8562e7baef613081b25d77a8d9d829b7598",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptRND/seed_0_train.yaml",
+      "origin": "artifacts/fate_clean_novelty_20260929_v2/clean_novelty/seed_0/train_rnd_matched/train/config.yaml",
+      "source_sha256": "f55912d3f524c9013e2630dcbd5e372844b454321ef4453c0d11a273e7651770",
+      "public_sha256": "3a0f27ad64eb4b4acff8dff8d4335d7d37a37bed6f2d599a09441b8dbb99a40f",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptRND/seed_1_train.yaml",
+      "origin": "artifacts/fate_clean_novelty_20260929_v2/clean_novelty/seed_1/train_rnd_matched/train/config.yaml",
+      "source_sha256": "fb2a0f2256c444f092f05d25685f3df65679ef8bb1fee07b9e130a5d3288ebb1",
+      "public_sha256": "643c357d9c6a6fb061cc6e416c1bbf0b8892fd996bb12fab6db63bc4399a7bdb",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptRND/seed_2_train.yaml",
+      "origin": "artifacts/fate_clean_novelty_20260929_v2/clean_novelty/seed_2/train_rnd_matched/train/config.yaml",
+      "source_sha256": "dbec95976dbb620b75a86eddb218a2b6fc253452b586d86433c22719af85ece0",
+      "public_sha256": "6cc54b80c212c228ac4a3c055cdc48c0845bd23f10bf5aac64f401825f52593a",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptRND/seed_3_train.yaml",
+      "origin": "artifacts/fate_clean_novelty_20260929_v2/clean_novelty/seed_3/train_rnd_matched/train/config.yaml",
+      "source_sha256": "ce9951233f15cbc3c731f713c5329beedc52872da4909d03f13974e8332fb9d3",
+      "public_sha256": "f9913d8e7ccd860fa7a56fa7675f79b9b028160dbc70bba4998c74a6ce676e3d",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptRND/seed_4_train.yaml",
+      "origin": "artifacts/fate_clean_novelty_20260929_v2/clean_novelty/seed_4/train_rnd_matched/train/config.yaml",
+      "source_sha256": "76c2bbc43ae6cc6b82d1af49c20f9ac708e712d58439b35badf5fda1b2574c08",
+      "public_sha256": "bbfe7c237d3f763018b358c15e2f854c25d94195d7d5cb980b4ba0012270d919",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptSparseSurprise/seed_0_train.yaml",
+      "origin": "artifacts/fate_clean_novelty_20260929_v2/clean_novelty/seed_0/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "64e347eb759bbe607592776b6d1463e2cb4e6567e16ed2e82e425ea774a56d96",
+      "public_sha256": "a7e0747c46480085e489e5682cc9bb7e05cff99b685c5350488a84e9d1311214",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptSparseSurprise/seed_1_train.yaml",
+      "origin": "artifacts/fate_clean_novelty_20260929_v2/clean_novelty/seed_1/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "2d1db7959c50edf7606f07690ac4678755c2e93dbb14b93089f66dab8d5d2974",
+      "public_sha256": "e8172da3a8bc602ed2c01c3c5ede83980dfbb14f50990d1eba841b21f6f70444",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptSparseSurprise/seed_2_train.yaml",
+      "origin": "artifacts/fate_clean_novelty_20260929_v2/clean_novelty/seed_2/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "1b87d97b5a08ee7f09868f1b0fcbb17c022c283a867a35d99d01f296bc3ac3e2",
+      "public_sha256": "80c7f66d92da196085ba7656aa8932bc4fa4c38e535a501a0f8fd794965861d3",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptSparseSurprise/seed_3_train.yaml",
+      "origin": "artifacts/fate_clean_novelty_20260929_v2/clean_novelty/seed_3/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "9a25ac6705f05f7c711f20ef5bbc912f43438e9321c3797e1ff4c9417463b49f",
+      "public_sha256": "f0d57d047ef99b439d57048ee7d6d20141330ba4209d402f97136e48c0a7935c",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptSparseSurprise/seed_4_train.yaml",
+      "origin": "artifacts/fate_clean_novelty_20260929_v2/clean_novelty/seed_4/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "06db1e77a918a42fe8a8182a010982f742a088480215ce1775d3487e97ca2a4c",
+      "public_sha256": "1646b6df37871c876987809f75bee0d280c19a02b4f4e75fac0aa6df14102ab8",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptSparseSurprise/seed_0_train.yaml",
+      "origin": "artifacts/fate_replication_20261002_v1/experiment/fault_adapt/seed_0/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "80cf3575257030625f4ec60dbfed60db95418cf552d56506cf8a547f14ea2ec4",
+      "public_sha256": "2e50f0a143035b63de97b9c4d7d41a6c5052ae3cd3df179a167b42c4568fadcd",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptSparseSurprise/seed_1_train.yaml",
+      "origin": "artifacts/fate_replication_20261002_v1/experiment/fault_adapt/seed_1/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "f416757749b19eb37c4575ba7fe8eeddbc996b1ca88729e385421485d39bb67c",
+      "public_sha256": "3d2d71df33c77f7c1d6bfa22cf65dec2094105906a5e0f032f48b2f52b79e13f",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptSparseSurprise/seed_2_train.yaml",
+      "origin": "artifacts/fate_replication_20261002_v1/experiment/fault_adapt/seed_2/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "5dfa5bff5c883fc8b03576c9820b1358f9a6ce96f0d5f115705eec049da7aa8c",
+      "public_sha256": "c6bd75aca09fa7b4abdeb01fe01c4a63bb004abe4cba70855781d840ceafe858",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptSparseSurprise/seed_3_train.yaml",
+      "origin": "artifacts/fate_replication_20261002_v1/experiment/fault_adapt/seed_3/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "2520a4495ca351c935d1a283e7dc4eb7c12653cabad12fb130173dbf605f0214",
+      "public_sha256": "fa34c7963db8b61643cd2665c87109b2d21a2e43b9e37e22a4bb65469b118927",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptSparseSurprise/seed_4_train.yaml",
+      "origin": "artifacts/fate_replication_20261002_v1/experiment/fault_adapt/seed_4/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "160a5b674b8b542cc88afe99fd10232cd65755bd8d231c2b20fe0aac37d67e71",
+      "public_sha256": "f690dfe9929d4b009f68bb9f8a147642d6b82a826c94279f74c9e1065ec0d637",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptAbsoluteSameShape/seed_0_train.yaml",
+      "origin": "artifacts/fate_review_followup_20261015_v1/experiment/absolute_clean/seed_0/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "55d791404524d584da71abf5bef97bfee602920209d2172dd6e707d5d1712711",
+      "public_sha256": "a8afacce52d1ece4d84761ffa8732ff8c4f9a560695f8d0734493fa551bf3d5c",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptAbsoluteSameShape/seed_1_train.yaml",
+      "origin": "artifacts/fate_review_followup_20261015_v1/experiment/absolute_clean/seed_1/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "1e999f314d62dcefcb2c5f4c37dbe8d1293dd0c010d7eb7a02f3cc0bd77cd501",
+      "public_sha256": "45f40c058b1cea0aa3a681c4ff56466cff2c56ac71851b51f92e683655921710",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptAbsoluteSameShape/seed_2_train.yaml",
+      "origin": "artifacts/fate_review_followup_20261015_v1/experiment/absolute_clean/seed_2/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "ef748bfbc092f217799c71cd548e126c1d2bf5bbfa618f8eec7de643208d17e5",
+      "public_sha256": "3fd29031bdaf80ce7e66015001206510822c5447b2e290dfc8a83b49f7c4f330",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptAbsoluteSameShape/seed_3_train.yaml",
+      "origin": "artifacts/fate_review_followup_20261015_v1/experiment/absolute_clean/seed_3/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "ad2a0c2ead855f78debcbad6f6a86c4c8614b22b4f7fb328c15247ea6244161e",
+      "public_sha256": "de42216024461130835d66bd36e2e19c9d905c0f1bd79dff531fe45725dda39c",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptAbsoluteSameShape/seed_4_train.yaml",
+      "origin": "artifacts/fate_review_followup_20261015_v1/experiment/absolute_clean/seed_4/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "4d754899e5b2217cf77760583c26d96aa7d593348bd37f8adaf32a87c489de61",
+      "public_sha256": "4a6bf24629ffed32837d49e4295d069cd2c7193c0ea0e924c56fead18fde4c5a",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptAbsoluteSameShape/seed_0_train.yaml",
+      "origin": "artifacts/fate_review_followup_20261015_v1/experiment/absolute_benchmark_train/seed_0/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "bb11420d582761b2aae991627cc95754f881b5c3aea013fd9be68ea39f0e49d8",
+      "public_sha256": "78934e93a5e28b79c060b51d4743680aeda781f3fd9d4516ac1cc291ad000b39",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptAbsoluteSameShape/seed_1_train.yaml",
+      "origin": "artifacts/fate_review_followup_20261015_v1/experiment/absolute_benchmark_train/seed_1/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "19d6bace887f12df5e63926d27db4dea5a2f8cb075efaa347f289817afca49b0",
+      "public_sha256": "a9e6d20aea3f6d2a928692350156a51312c8bca3df101e02bf73e0df3ada78e1",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptAbsoluteSameShape/seed_2_train.yaml",
+      "origin": "artifacts/fate_review_followup_20261015_v1/experiment/absolute_benchmark_train/seed_2/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "4ac3683308cc93d49789a947beb2154bbf8fc53b7c5d1a24ff4dfd94bbbb13f9",
+      "public_sha256": "2a3366929237f5b048b2e9f1ea195a579f9a1e6d60b6ea5293a5267d5f1ff68d",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptAbsoluteSameShape/seed_3_train.yaml",
+      "origin": "artifacts/fate_review_followup_20261015_v1/experiment/absolute_benchmark_train/seed_3/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "ffa6a8da23ec69777c3c5591167e4490a59b7deec558146587564b243787acbb",
+      "public_sha256": "7762db4ea9ebb23c6b28b5093a07a8b7b333ecb74fe7317884090d45e6656afd",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptAbsoluteSameShape/seed_4_train.yaml",
+      "origin": "artifacts/fate_review_followup_20261015_v1/experiment/absolute_benchmark_train/seed_4/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "dd4180858e2f4f6ad0024ffb26babe6de70b5d535f1f19e7a5c62d7d26128e0b",
+      "public_sha256": "fb3879fe8b888736702326025e220a8bb4f7d45096305b8344117c16f7d0bd5b",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptSparseMagnitude072/seed_0_train.yaml",
+      "origin": "artifacts/tea_revision_20261019_v2/experiment/magnitude_clean/seed_0/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "57bdfa0bac1c88fb16f3cbe64990681383df3aec85bbb11e10a0999aef535549",
+      "public_sha256": "22a0097ba3719f492ad72099e9f516b2d5ef459ae5c691c301ef8160f2b3e993",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptSparseMagnitude072/seed_1_train.yaml",
+      "origin": "artifacts/tea_revision_20261019_v2/experiment/magnitude_clean/seed_1/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "77c94266bd774f404cfaa804bdf1006f73a400ce55012f60485aabda424ad8d5",
+      "public_sha256": "be7706ae9db53493989b30ed50da277b99fa657a898598493c16ddcda6f19da7",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptSparseMagnitude072/seed_2_train.yaml",
+      "origin": "artifacts/tea_revision_20261019_v2/experiment/magnitude_clean/seed_2/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "fc165ffda52473aaa03eca6500b99d108070cc4873e29396f5a5899b9fbb3526",
+      "public_sha256": "a4ee25b2a4af802f2c340f44d4b63f8cf7da277d73075f9b9e616575703fd6ac",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptSparseMagnitude072/seed_3_train.yaml",
+      "origin": "artifacts/tea_revision_20261019_v2/experiment/magnitude_clean/seed_3/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "0cf1280f0ea32391e4be47bdf91dc98533405c3473f67c52e143cfca5ffab736",
+      "public_sha256": "1b0467173e075a69c2b0bbfef5754bf956fb3236eb6baafa87103d65e94214b2",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/CleanAdaptSparseMagnitude072/seed_4_train.yaml",
+      "origin": "artifacts/tea_revision_20261019_v2/experiment/magnitude_clean/seed_4/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "921fe24a68168e0cd2f8d9efa80804a683af753c29110b091a38977a38ff2e4e",
+      "public_sha256": "1f67cb4758c27658c2283b5626ff98669abbc1f1fd56ec53a67ecf0308d6074b",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptSparseMagnitude072/seed_0_train.yaml",
+      "origin": "artifacts/tea_revision_20261019_v2/experiment/magnitude_benchmark_train/seed_0/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "29999e91588fbbedc1385a44d59734eac9cd16260b2d376aae26c7e3a168c240",
+      "public_sha256": "e7db902f5c19ebaab8fb9c41e99088571e3d999423612619175b82838e77e20f",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptSparseMagnitude072/seed_1_train.yaml",
+      "origin": "artifacts/tea_revision_20261019_v2/experiment/magnitude_benchmark_train/seed_1/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "1e8598b7ae3f4be574ed3f871b5156fa28e0d96222cabb98a2a4ead262167351",
+      "public_sha256": "4cb81f076b572d8c84f506b61b1a3a6258749948c3b4e67f98e0522c4fdbc63a",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptSparseMagnitude072/seed_2_train.yaml",
+      "origin": "artifacts/tea_revision_20261019_v2/experiment/magnitude_benchmark_train/seed_2/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "0187751e9eccfd1ab18498859c3d8a33615530741f46870bf63c507a04e8a453",
+      "public_sha256": "87de3b9f8532c838e3b549afa5d33c7ed09c7f19b011d95925dbd8a0ce62d389",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptSparseMagnitude072/seed_3_train.yaml",
+      "origin": "artifacts/tea_revision_20261019_v2/experiment/magnitude_benchmark_train/seed_3/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "dc6ba2fd4fe39a5ee2138b6a29e3a606caf97ba25e48ffce5be52a1ffdf0897c",
+      "public_sha256": "66b100d95a8fc88ea500379760c477a704c46d2c5af099f85c1c517046e70637",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptSparseMagnitude072/seed_4_train.yaml",
+      "origin": "artifacts/tea_revision_20261019_v2/experiment/magnitude_benchmark_train/seed_4/train_sparse_surprise_matched/train/config.yaml",
+      "source_sha256": "042811ebb2fbee666b44447a0e64787a050ee929cc0e9c8efc7a7f682defd4dd",
+      "public_sha256": "e1133723d410c55c65a1742a20cdd07214ae2f3e000bb2b1cb52067414ae17b1",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptTEANoFirstBonus/seed_0_train.yaml",
+      "origin": "artifacts/tea_no_first_bonus_20261026_v1/experiment/no_first/seed_0/train_excess_delta_p95_beta02/train/config.yaml",
+      "source_sha256": "0d1e81999dd681bf83ea1de255ae6d614ac130320c208fb83ef487a0fb11d81e",
+      "public_sha256": "d077457f84e84d7d1f9192eed0c1f648342d09948b99c266d944da87a9503a5d",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptTEANoFirstBonus/seed_1_train.yaml",
+      "origin": "artifacts/tea_no_first_bonus_20261026_v1/experiment/no_first/seed_1/train_excess_delta_p95_beta02/train/config.yaml",
+      "source_sha256": "a55d11683f8d43a22d68851acb7e30a2ac4b4f8eecf33badeb1b02b1ddf36d6a",
+      "public_sha256": "fbf68f0bb7d1cfe87b380f6d0e3d22206b431bfbdcae5a7d43062a6edd4fdd7b",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptTEANoFirstBonus/seed_2_train.yaml",
+      "origin": "artifacts/tea_no_first_bonus_20261026_v1/experiment/no_first/seed_2/train_excess_delta_p95_beta02/train/config.yaml",
+      "source_sha256": "41ad60a5a3c5d70c43a93a660007fe1c039189d51a30bfaf930663913bc5a91e",
+      "public_sha256": "f0fef7f3bf68765eac53a42640bc88b138c9bb9912464967331477d121f9eaea",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptTEANoFirstBonus/seed_3_train.yaml",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/experiment/no_first/seed_3/train_excess_delta_p95_beta02/train/config.yaml",
+      "source_sha256": "bc41b1e7b347a1609a1f2f6581ea1d7e5b65c797cfd31967780844007ce2db56",
+      "public_sha256": "a6ba05a6b8a122898bed9b6c8ae0b3fddebeb065ba1033e1697a27262ddb030d",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultAdaptTEANoFirstBonus/seed_4_train.yaml",
+      "origin": "artifacts/tea_no_first_bonus_20261027_5seed_v1/experiment/no_first/seed_4/train_excess_delta_p95_beta02/train/config.yaml",
+      "source_sha256": "7a4697ba0c56d620b37fcee813cf9da06191382f83db50e23b92eb4a639eb73c",
+      "public_sha256": "21f73992f96d987c01847c284d3a4b8f0b96ead09027e46e092bf71d360ab6ad",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultRestoredTaskOnly/seed_0_train.yaml",
+      "origin": "artifacts/tea_replay_results_handoff_20261026/configs/FaultRestoredTaskOnly/seed_0/train.yaml",
+      "source_sha256": "b1fec622d7210edb2d755cd56f5723159427b67e6af06fb34f4dae4b2f54fc8c",
+      "public_sha256": "9d38944a3db41abc26ebf73d012f129278d4539c3c5357fc319665dc1dd48207",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultRestoredTaskOnly/seed_1_train.yaml",
+      "origin": "artifacts/tea_replay_results_handoff_20261026/configs/FaultRestoredTaskOnly/seed_1/train.yaml",
+      "source_sha256": "cf29260a2e9068d54cfb183d9a4a9a9e689f2351cb8187fcebba2f95384e53d5",
+      "public_sha256": "d6aba3694d656124c0edbdded23ddc59cc967357c5e83c2e9137a40452a0349a",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultRestoredTaskOnly/seed_2_train.yaml",
+      "origin": "artifacts/tea_replay_results_handoff_20261026/configs/FaultRestoredTaskOnly/seed_2/train.yaml",
+      "source_sha256": "5070d55b15e928c5a99a779f790b520261452f91c607d30d6525680a543a7eb7",
+      "public_sha256": "0164b047dcbdc1ca91558881d993cdce68f53df13c3891df4c4637f88b16b77f",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultRestoredTaskOnly/seed_3_train.yaml",
+      "origin": "artifacts/tea_replay_results_handoff_20261026/configs/FaultRestoredTaskOnly/seed_3/train.yaml",
+      "source_sha256": "acb810b5f4dcd0c1b2a1037dec7abd29661365f6ee819312e21c7adebd890a15",
+      "public_sha256": "75c7aa52f576eebbc11431eb2d6df267a7aa3e300ca29e5f27436d446f738eb3",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultRestoredTaskOnly/seed_4_train.yaml",
+      "origin": "artifacts/tea_replay_results_handoff_20261026/configs/FaultRestoredTaskOnly/seed_4/train.yaml",
+      "source_sha256": "5f210e6f3b6108496e508dd0d01e987e379ca1a6cb606d58c4bf251d372a09d5",
+      "public_sha256": "754277168eb95641fe047701795d48273956ce63836684860b5dd7bba4eb259c",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultRestoredTEA/seed_0_train.yaml",
+      "origin": "artifacts/tea_replay_results_handoff_20261026/configs/FaultRestoredTEA/seed_0/train.yaml",
+      "source_sha256": "0caef6f2cda239c052f92003ffe457717a9d13502d97f2a54476ead5383fcfb2",
+      "public_sha256": "1d43c4ee5585ec3f77db8da4a4ad12424c2ef9a64ee7823e4fce6842c592b479",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultRestoredTEA/seed_1_train.yaml",
+      "origin": "artifacts/tea_replay_results_handoff_20261026/configs/FaultRestoredTEA/seed_1/train.yaml",
+      "source_sha256": "50028a2a74c27ca25fc11c49accce34aec174bcd55ad24fe6f7da8c6e8b0cfd3",
+      "public_sha256": "bf2c78a1aefb6ecb99ab6f0eb270add55df98715e456083e401939286f003d18",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultRestoredTEA/seed_2_train.yaml",
+      "origin": "artifacts/tea_replay_results_handoff_20261026/configs/FaultRestoredTEA/seed_2/train.yaml",
+      "source_sha256": "3ccae372061c99e2d80d688d3936423df9d0188b22e5f30a427b786148848030",
+      "public_sha256": "59ce0ea4dc02cc78c3549b722ee526f8f254c86f63fee4df4855ca9d6d97205b",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultRestoredTEA/seed_3_train.yaml",
+      "origin": "artifacts/tea_replay_results_handoff_20261026/configs/FaultRestoredTEA/seed_3/train.yaml",
+      "source_sha256": "9f98e9d01f84a28f25768f84950854b6e6faa995a68b6106bb2e564fc62bfc84",
+      "public_sha256": "a35688eb1f07df585e711f160f946f0d19738608cee395f7ed553e4ecf695472",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "configs/tea/FaultRestoredTEA/seed_4_train.yaml",
+      "origin": "artifacts/tea_replay_results_handoff_20261026/configs/FaultRestoredTEA/seed_4/train.yaml",
+      "source_sha256": "fcd01e6e4f7b01da192bed0f38bc912e8c88c796174a7a0a2cfbfd203b238d4e",
+      "public_sha256": "6bdba47cfe222049340c3b1b19ade3c18c7e7c47670106d47601546e0750c408",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    },
+    {
+      "target": "figures/tea/01_performance_behavior.png",
+      "origin": "artifacts/tea_paper_figures_final_20261028/01_performance_behavior.png",
+      "source_sha256": "7ea5eb6054cdde1156fda028f004bb53733613a9b3ba0ceded57292b37ca39a1",
+      "public_sha256": "7ea5eb6054cdde1156fda028f004bb53733613a9b3ba0ceded57292b37ca39a1",
+      "sanitized_paths": false
+    },
+    {
+      "target": "figures/tea/pdf/01_performance_behavior.pdf",
+      "origin": "artifacts/tea_paper_figures_final_20261028/pdf/01_performance_behavior.pdf",
+      "source_sha256": "e1becdb7abc0bf4182172566f735e297c61d8bb813296a218e623331f50e7a8e",
+      "public_sha256": "e1becdb7abc0bf4182172566f735e297c61d8bb813296a218e623331f50e7a8e",
+      "sanitized_paths": false
+    },
+    {
+      "target": "figures/tea/02_operator_exposure.png",
+      "origin": "artifacts/tea_paper_figures_final_20261028/02_operator_exposure.png",
+      "source_sha256": "a83204307a86699a21ecf4e25c838185b3eaa1323a0ba959746e78a75dac43cf",
+      "public_sha256": "a83204307a86699a21ecf4e25c838185b3eaa1323a0ba959746e78a75dac43cf",
+      "sanitized_paths": false
+    },
+    {
+      "target": "figures/tea/pdf/02_operator_exposure.pdf",
+      "origin": "artifacts/tea_paper_figures_final_20261028/pdf/02_operator_exposure.pdf",
+      "source_sha256": "c5477bd3bf64f73693fcb1f2694ea48adafe335f1a2da26ca5a605f72898e9b4",
+      "public_sha256": "c5477bd3bf64f73693fcb1f2694ea48adafe335f1a2da26ca5a605f72898e9b4",
+      "sanitized_paths": false
+    },
+    {
+      "target": "figures/tea/03_reward_scale.png",
+      "origin": "artifacts/tea_paper_figures_final_20261028/03_reward_scale.png",
+      "source_sha256": "57327f908a0377b516e4e9fab03309530baa1f0870f0a86db137c6f13ec6c0d2",
+      "public_sha256": "57327f908a0377b516e4e9fab03309530baa1f0870f0a86db137c6f13ec6c0d2",
+      "sanitized_paths": false
+    },
+    {
+      "target": "figures/tea/pdf/03_reward_scale.pdf",
+      "origin": "artifacts/tea_paper_figures_final_20261028/pdf/03_reward_scale.pdf",
+      "source_sha256": "87a023cb27b4f00fda955a76f05346a849789302105a18889518c7eea011ce4f",
+      "public_sha256": "87a023cb27b4f00fda955a76f05346a849789302105a18889518c7eea011ce4f",
+      "sanitized_paths": false
+    },
+    {
+      "target": "figures/tea/04_replay_sensitivity.png",
+      "origin": "artifacts/tea_paper_figures_final_20261028/04_replay_sensitivity.png",
+      "source_sha256": "66e7df0d0f272a689896278de8ed433e37cac553514eb5c20f4ff8d021c17fff",
+      "public_sha256": "66e7df0d0f272a689896278de8ed433e37cac553514eb5c20f4ff8d021c17fff",
+      "sanitized_paths": false
+    },
+    {
+      "target": "figures/tea/pdf/04_replay_sensitivity.pdf",
+      "origin": "artifacts/tea_paper_figures_final_20261028/pdf/04_replay_sensitivity.pdf",
+      "source_sha256": "9ce20894dd75e0e9707c834dc09e2d1f24c0ca97415db481186fb183e0e05578",
+      "public_sha256": "9ce20894dd75e0e9707c834dc09e2d1f24c0ca97415db481186fb183e0e05578",
+      "sanitized_paths": false
+    },
+    {
+      "target": "figures/tea/05_first_transition_ablation.png",
+      "origin": "artifacts/tea_paper_figures_final_20261028/05_first_transition_ablation.png",
+      "source_sha256": "f3139e720a65a32a99e3400ca13d01181bcb32d0951a066f5a13816c693febf0",
+      "public_sha256": "f3139e720a65a32a99e3400ca13d01181bcb32d0951a066f5a13816c693febf0",
+      "sanitized_paths": false
+    },
+    {
+      "target": "figures/tea/pdf/05_first_transition_ablation.pdf",
+      "origin": "artifacts/tea_paper_figures_final_20261028/pdf/05_first_transition_ablation.pdf",
+      "source_sha256": "262656c0ba5b2b8dbf0b4bc178c47660cc6a7965b11d35e4a3c032575d6d5cb8",
+      "public_sha256": "262656c0ba5b2b8dbf0b4bc178c47660cc6a7965b11d35e4a3c032575d6d5cb8",
+      "sanitized_paths": false
+    },
+    {
+      "target": "figures/tea/CAPTIONS.txt",
+      "origin": "artifacts/tea_paper_figures_final_20261028/CAPTIONS.txt",
+      "source_sha256": "56a9340a2db13a3682628aa6177c551edba922be0bd1ab14a437c5ef104b2e80",
+      "public_sha256": "fa9fdc340311caca45b181f6436da5c4caab143e086e315d20e2b3751862cb93",
+      "sanitized_paths": true,
+      "release_adjustment": "Whitespace normalized; YAML parameter values and CSV values unchanged."
+    }
+  ],
+  "release_adjusted_files": [
+    "dreamerv3/plot_tea_final_paper.py"
+  ],
+  "formatting_note": "Published YAML trailing whitespace and generated text/CSV line endings normalized; YAML parsed values and CSV cells verified unchanged."
+}
